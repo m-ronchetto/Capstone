@@ -1,0 +1,151 @@
+header{
+    display: flex;
+    padding-left: 2%;
+    padding-right: 2%;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px black solid;
+    background-color: #ebebeb;
+}
+h1, h2{
+    font-family: 'Roboto Mono', monospace;
+}
+h2{
+    margin: 0;
+    font-size: 1rem;
+}
+h1{
+    font-size: 1.5rem;
+}
+nav{
+    display: flex;
+    margin-left: 50%;
+}
+nav>a{
+    padding: 5px;
+    text-decoration: none;
+}
+nav>a:visited{
+    color: black;
+}
+html{
+    scroll-behavior: smooth;
+    background-color: #ebebeb;
+    font-family: sans-serif;
+    margin: 0;
+}
+.step{
+    margin: 50px 10% 500px 3%;
+}
+#container{
+    display: flex;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#right-column{
+    width: 35%;
+    padding: 20px;
+    margin-bottom: 50px;
+    position: sticky;
+    right: 3%;
+    top: 16%;
+    background-color: white;
+    border: 1px black solid;
+    height: fit-content;
+}
+#left-column{
+    width: 90%;
+}
+form{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    width:80%;
+}
+.content{
+    background-color: white;
+    border: 1px black solid;
+    padding: 20px;
+}
+.tip{
+    background-color: #C6EDFE;
+    border: 1px #0097D8 solid;
+    margin-bottom: 30px;
+    padding: 20px;
+    color: #0097D8;
+}
+.selectable{
+    color: #F04646;
+}
+button{
+    padding: 7px;
+    font-size: 1rem;
+}
+.next{
+    background-color: #F04646;
+    color: white;
+    border: none;
+}
+.next>a,.back>a{
+    text-decoration: none;
+    color: white;
+}
+.horizontal{
+    flex-direction: row;
+}
+label{
+    margin-right:16px;
+}
+.button-cont{
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+}
+input[name="topic"]{
+    position:fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+.radios, .checks{
+    background-color: #ebebeb;
+    border: 1px black solid;
+    padding: 7px;
+    margin-bottom: 15px;
+}
+input[name="topic"]:checked + label, input[name="check"]:checked + label{
+    background-color: #FCD1D1;
+    border: 1px #F04646 solid;
+    color: #F04646;
+}
+input[name="check"]:checked{
+    background-color: #F04646;
+    border: none;
+}
+.next>a:visited,.back>a:visited{
+    text-decoration: none;
+    color: white;
+}
+.back{
+    background-color: #0097D8;
+    color: white;
+    border: none;
+}
+.next:hover,.next-inactive{
+    background-color: #FCD1D1;
+    color: #F04646;
+    border: 1px #F04646 solid;
+}
+.next>a:hover,.next-inactive{
+    color: #F04646;
+}
+.back>a:hover,.back-inactive{
+    color: #0097D8;
+}
+.back:hover,.back-inactive{
+    background-color: #C6EDFE;
+    color: #0097D8;
+    border: 1px #0097D8 solid;
+}
+span,#dynamic-letter-story{
+    color:#0097D8;
+}

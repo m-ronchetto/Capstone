@@ -1,0 +1,183 @@
+<html>
+    <head>
+        <title>Write Change Form</title>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>Write Change</h1>
+            <nav>
+                <a href="#step-1">Step 1</a>
+                <a href="#step-2">Step 2</a>
+                <a href="#step-3">Step 3</a>
+                <a href="#step-4">Step 4</a>
+                <a href="#step-5">Step 5</a>
+            </nav>
+        </header>
+        <div id="container">
+            <div id="left-column">
+                <div class="step" id="step-1">
+                    <div class="tip">
+                        <p>
+                            This information allows representatives to know you're a constituent.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <h2>
+                            Let's get this letter started.
+                        </h2>
+                        <form class="horizontal">
+                            <label>Zip Code</label>
+                            <input type="text">
+                        </form>
+                        <div class="button-cont">
+                            <button class="back-inactive" type="button">
+                                Back to Topic Selection
+                            </button>
+                            <button class="next" type="button">
+                                <a href="#step-2">Next: Name</a>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+                <div class="step" id="step-2">
+                    <div class="tip">
+                        <p>
+                            Representatives value knowing who their letters are going to.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <h2>Let's get to know you.</h2>
+                        <form class="horizontal">
+                            <label>What's Your Name?</label>
+                            <input id="name-input" type="text">
+                        </form>
+                        <div class="button-cont">
+                            <button class="back" type="button">
+                            <a href="#step-1">Back</a>
+                            </button>
+                            <button class="next" type="button">
+                            <a href="#step-3">Next: Prompt</a>
+                            </button>
+                        </div>
+                    </div>  
+                </div>
+                <div class="step" id="step-3">
+                    <div class="tip">
+                        <p>
+                            Personalized letters are more likely to get an individualized response from representatives.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <h2>Choose a prompt to guide your story.</h2>
+                        <p>
+                            Personal stories are what representatives remeber most from reading letters. Some representatives even print these stories as a reminder of who they are helping as they sign laws!
+                        </p>
+                        <form>
+                            <input name="topic" id="you" type="radio">
+                            <label class="radios" for="you">Why is this topic important to you?</label>
+                            <input name="topic" id="others" type="radio">
+                            <label class="radios" for="others">How has air pollution affected your life?</label>
+                            <input name="topic" id="skip" type="radio">
+                            <label class="radios" for="skip">Skip to call to action</label>
+                        </form>
+                        <div class="button-cont">
+                            <button class="back" type="button">
+                            <a href="#step-2">Back</a>
+                            </button>
+                            <button class="next" type="button">
+                            <a href="#step-4">Next: Share Your Story</a>
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+                <div class="step" id="step-4">
+                    <div class="tip">
+                        <p>
+                            You’re nearly done! This step will make your letter shine.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <h2>Share a story of how this topic is important to you.</h2>
+                        <p>
+                            Here are some ideas to get you started:
+                        </p>
+                        <ul>
+                            <li>
+                                How did you first learn about this topic?
+                            </li>
+                            <li>
+                                Have you volunteered doing work related to this topic?
+                            </li>
+                            <li>
+                                How does this topic affect others?
+                            </li>
+                        </ul>
+                        <form>
+                            <textarea id="story-input" autocorrect="on" rows="4">
+                            </textarea>
+                        </form>
+                        <div class="button-cont">
+                            <button class="back" type="button">
+                            <a href="#step-3">Back</a>
+                            </button>
+                            <button class="next" type="button">
+                                <a href="#step-5">Next: Call to Action</a>
+                            </button>
+                        </div>
+                    </div>   
+                </div>
+                <div class="step" id="step-5">
+                    <div class="tip">
+                        <p>
+                            Last step! Specific action items let your representative know how to best take action.
+                        </p>
+                    </div>
+                    <div class="content">
+                        <h2>Choose a call to action for your representative</h2>
+                        <form>
+                            <input name="check" id="action-1" type="checkbox">
+                            <label class="checks">Action 1</label>
+                            <input name="check" id="action-2" type="checkbox">
+                            <label class="checks">Action 2</label>
+                            <input name="check" id="action-3" type="checkbox">
+                            <label class="checks">Action 3</label>
+                            <input name="check" id="action-4" type="checkbox">
+                            <label class="checks">Custom</label>
+                        </form>
+                        <div class="button-cont">
+                            <button class="back" type="button">
+                            <a href="#step-4">Back</a>
+                            </button>
+                            <button class="next-inactive" type="button">
+                                Preview Letter
+                            </button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div id="right-column">
+                <h2>Preview
+                </h2>
+                <div id="dynamic-letter">
+                    <p>Hello <span id="dynamic-letter-rep">(representative)</span>,</p>
+                    <p> My name is <span id="dynamic-letter-name">(name)</span>, and I am a constituent from St. Louis.</p>
+                    <p>
+                        <span class="selectable">Air pollution</span> contributes to premature death, heart attacks, aggravated
+                        asthma, and reduced lung function. St. Louis has been in violation of the
+                        federal health-based air standard for ozone
+                        since 1979.
+                    </p>
+                    <p id="dynamic-letter-story">
+                        (Share your story)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
