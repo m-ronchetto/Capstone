@@ -5,27 +5,24 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
         <header>
             <h1>Write Change</h1>
             <nav>
-                <a href="#step-1">Step 1</a>
-                <a href="#step-2">Step 2</a>
-                <a href="#step-3">Step 3</a>
-                <a href="#step-4">Step 4</a>
-                <a href="#step-5">Step 5</a>
+                <a id="step-1-header" href="#step-1">Step 1<span class="step-subtitle" id="step-1-subtitle">: Zip Code</span></a>
+                <a id="step-2-header" href="#step-2">Step 2<span class="step-subtitle-hidden" id="step-2-subtitle">: Name</span></a>
+                <a id="step-3-header" href="#step-3">Step 3<span class="step-subtitle-hidden" id="step-3-subtitle">: Prompt</span></a>
+                <a id="step-4-header" href="#step-4">Step 4<span class="step-subtitle-hidden" id="step-4-subtitle">: Share Your Story</span></a>
+                <a id="step-5-header" href="#step-5">Step 5<span class="step-subtitle-hidden" id="step-5-subtitle">: Call to Action</span></a>
             </nav>
         </header>
         <div id="container">
             <div id="left-column">
-                <div class="step" id="step-1">
-                    <div class="tip">
-                        <p>
-                            This information allows representatives to know you're a constituent.
-                        </p>
-                    </div>
+                <a class="anchor" id="step-1"></a>
+                <div class="step" id="step-1-div">
                     <div class="content">
                         <h2>
                             Let's get this letter started.
@@ -43,13 +40,14 @@
                             </button>
                         </div>
                     </div> 
-                </div>
-                <div class="step" id="step-2">
                     <div class="tip">
                         <p>
-                            Representatives value knowing who their letters are going to.
+                            This information allows representatives to know you're a constituent.
                         </p>
                     </div>
+                </div>
+                <a class="anchor" id="step-2"></a>
+                <div class="step" id="step-2-div">
                     <div class="content">
                         <h2>Let's get to know you.</h2>
                         <form class="horizontal">
@@ -64,14 +62,15 @@
                             <a href="#step-3">Next: Prompt</a>
                             </button>
                         </div>
-                    </div>  
-                </div>
-                <div class="step" id="step-3">
+                    </div>
                     <div class="tip">
                         <p>
-                            Personalized letters are more likely to get an individualized response from representatives.
+                            Representatives value knowing who their letters are going to.
                         </p>
-                    </div>
+                    </div>  
+                </div>
+                <a class="anchor" id="step-3"></a>
+                <div class="step" id="step-3-div">
                     <div class="content">
                         <h2>Choose a prompt to guide your story.</h2>
                         <p>
@@ -94,13 +93,14 @@
                             </button>
                         </div>
                     </div> 
-                </div>
-                <div class="step" id="step-4">
                     <div class="tip">
                         <p>
-                            You’re nearly done! This step will make your letter shine.
+                            Personalized letters are more likely to get an individualized response from representatives.
                         </p>
                     </div>
+                </div>
+                <a class="anchor" id="step-4"></a>
+                <div class="step" id="step-4-div">
                     <div class="content">
                         <h2>Share a story of how this topic is important to you.</h2>
                         <p>
@@ -118,8 +118,7 @@
                             </li>
                         </ul>
                         <form>
-                            <textarea id="story-input" autocorrect="on" rows="4">
-                            </textarea>
+                            <textarea id="story-input" autocorrect="on" rows="4"></textarea>
                         </form>
                         <div class="button-cont">
                             <button class="back" type="button">
@@ -129,25 +128,34 @@
                                 <a href="#step-5">Next: Call to Action</a>
                             </button>
                         </div>
-                    </div>   
-                </div>
-                <div class="step" id="step-5">
+                    </div>
                     <div class="tip">
                         <p>
-                            Last step! Specific action items let your representative know how to best take action.
+                            You’re nearly done! This step will make your letter shine.
                         </p>
-                    </div>
+                    </div>   
+                </div>
+                <a class="anchor" id="step-5"></a>
+                <div class="step" id="step-5-div">
                     <div class="content">
                         <h2>Choose a call to action for your representative</h2>
                         <form>
-                            <input name="check" id="action-1" type="checkbox">
-                            <label class="checks">Action 1</label>
-                            <input name="check" id="action-2" type="checkbox">
-                            <label class="checks">Action 2</label>
-                            <input name="check" id="action-3" type="checkbox">
-                            <label class="checks">Action 3</label>
-                            <input name="check" id="action-4" type="checkbox">
-                            <label class="checks">Custom</label>
+                            <div class="checks">
+                                <input class="check" name="check" id="action-1" type="checkbox">
+                                <label for="action-1">Action 1</label>
+                            </div>
+                            <div class="checks">
+                                <input class="check" name="check" id="action-2" type="checkbox">
+                                <label for="action-2">Action 2</label>
+                            </div>
+                            <div class="checks">
+                                <input class="check" name="check" id="action-3" type="checkbox">
+                                <label for="action-3" >Action 3</label>
+                            </div>
+                            <div class="checks">
+                                <input class="check" name="check" id="action-4" type="checkbox">
+                                <label for="action-4">Custom</label>
+                            </div>
                         </form>
                         <div class="button-cont">
                             <button class="back" type="button">
@@ -158,6 +166,11 @@
                             </button>
                         </div>
                     </div> 
+                    <div class="tip">
+                        <p>
+                            Last step! Specific action items let your representative know how to best take action.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div id="right-column">
@@ -175,6 +188,21 @@
                     <p id="dynamic-letter-story">
                         (Share your story)
                     </p>
+                    <ul id="calls-to-action">
+                        <span class="hidden" id="action-1-li"><li>
+                            Action 1
+                        </li></span>
+                        <span class="hidden" id="action-2-li"><li>
+                            Action 2
+                        </li></span>
+                        <span class="hidden" id="action-3-li"><li>
+                            Action 3
+                        </li></span>
+                        <span class="hidden" id="action-4-li"><li>
+                            Action 4
+                        </li></span>
+                        
+                    </ul>
                 </div>
             </div>
         </div>
