@@ -1,15 +1,19 @@
 //dynamic text inputs
 document.getElementById("name-input").addEventListener("input", function(){
+    document.getElementById("dynamic-letter-name").classList.add("selectable");
     text = document.getElementById("name-input").value;
     if (text.length === 0){
         text = "(name)";
+        document.getElementById("dynamic-letter-name").classList.remove("selectable");
     }
     document.getElementById("dynamic-letter-name").innerText = text;
 });
 document.getElementById("story-input").addEventListener("input", function(){
+    document.getElementById("dynamic-letter-story").classList.add("selectable");
     text = document.getElementById("story-input").value;
     if (text.length === 0){
         text = "(Share your story)";
+        document.getElementById("dynamic-letter-story").classList.remove("selectable");
     }
     document.getElementById("dynamic-letter-story").innerText = text;
 });
@@ -76,3 +80,33 @@ function currentStep(step){
     } 
     currentStep(step);
 }));
+
+//preview toggling
+document.getElementById("close").addEventListener("click", function(){
+    let sidebar = document.getElementById("right-column");
+    let left = document.getElementById("left-column");
+    if (sidebar.classList.contains("hide")){
+        sidebar.classList.remove("hide");
+        sidebar.classList.add("show");
+        setTimeout(()=>{
+            if (sidebar.classList.contains("show")){
+                sidebar.classList.remove("show");
+            }
+        }, 1000);
+        sidebar.style.display = "block";
+        document.getElementById("close").innerText = "Close Preview";
+        left.classList.remove("wide"); 
+    }
+    else{
+        sidebar.classList.remove("show");
+        sidebar.classList.add("hide");       
+        setTimeout(() => {
+            if (sidebar.classList.contains("hide")){
+                sidebar.style.display = "none";
+            }
+        }, 900);
+        document.getElementById("close").innerText = "Show Preview";
+        console.log(sidebar.style.display);
+        left.classList.add("wide");
+    }
+});

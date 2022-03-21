@@ -4,18 +4,17 @@ header{
     padding-right: 2%;
     position: sticky;
     top: 0;
-    border-bottom: 1px black solid;
-    background-color: #f1f1f1;
-}
-h1{
-    font-family: 'Roboto Mono', monospace;
+    /* border-bottom: 1px black solid; */
+    background-color: black;
 }
 h2{
     margin: 0;
     font-size: 1.1rem;
 }
 h1{
+    font-family: 'Roboto Mono', monospace;
     font-size: 1.5rem;
+    color: white;
 }
 nav{
     display: flex;
@@ -29,29 +28,24 @@ nav>a{
     padding: 5px;
     text-decoration: none;
     height:fit-content;
-    color: black;
-    transition: font-size .5s;
+    color: #909090;
 }
 .step-subtitle{
-    color: black;
+    color: #909090;
 }
-nav>a:visited{
-    color: black;
-}
-nav>a:hover{
-    font-weight: bolder;
-    font-size: 1.1rem;
-    color: #F04646;
-}
-.step-subtitle:hover{
+nav>a:hover>.step-subtitle, nav>a:hover{
     color:#F04646;
 }
-.current-step{
-    font-weight: bolder;
+.current-step, .step-subtitle{
+    color: white;
+}
+body{
+    margin: 0;
+    overflow: hidden;
 }
 html{
     scroll-behavior: smooth;
-    background-color: #f1f1f1;
+    background-color: #c4c4c4;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     line-height: 125%;
@@ -70,18 +64,19 @@ html{
 #right-column{
     min-width: 25%;
     max-width: 25%;
-    padding: 25px 25px 100px 25px;
+    padding: 35px;
     margin-bottom: 50px;
-    position: sticky;
+    position: fixed;
     right: 3%;
-    top: 13%;
+    top: 14%;
     background-color: white;
     border: 1px black solid;
     height: fit-content;
     word-wrap:break-word;
 }
 #left-column{
-    width: 90%;
+    width: 70%;
+    transition: width 1s;
 }
 form{
     margin-top: 16px;
@@ -104,37 +99,48 @@ form{
 .selectable{
     color: #F04646;
 }
+.selectable:hover{
+    color: #bb0606;
+}
 button{
     padding: 10px;
-    font-size: 1.1rem;
-    /* transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1; */
+    font-size: 1.2rem;
 }
-/* button:after{
-    content: '';
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: #FCD1D1;
-border-radius: 10rem;
-z-index: -2;
+#close{
+    background-color: black;
+    background: linear-gradient(to left, black 50%, #c4c4c4 50%)right;
+    background-size: 300% 100%;
+    transition: .5s ease-out;
+    color: white;
+    border: none;
+    position: fixed;
+    z-index: 1;
+    top: 16%;
+    right: 4%;
 }
-button:before{
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: #F04646;
-    transition: all .3s;
-    border-radius: 10rem;
-    z-index: -1;
-} */
+#close:hover{
+    background-position: left;
+    border: 1px black solid;
+    color: black;
+    padding: 9px;
+}
+@keyframes toggle {
+    from {right: 3%;}
+    to {right: -30%;}
+}
+.hide{
+    animation-name: toggle;
+    animation-duration:  1s;
+}
+.show{
+    animation-name: toggle;
+    animation-duration:  1s;
+    animation-direction: reverse;
+}
+#left-column.wide{
+    width: 90%;
+    transition: width 1s;
+}
 .anchor{
     display: block;
     position: relative;
@@ -142,9 +148,14 @@ button:before{
     visibility: hidden;
 }
 .next{
-    background-color: #F04646;
+    background: linear-gradient(to left, #F04646 50%, #FCD1D1 50%)right;
+    background-size: 300% 100%;
+    transition: .5s ease-out;
     color: white;
     border: none;
+}
+.next:hover{
+    background-position: left;
 }
 .next>a,.back>a{
     text-decoration: none;
@@ -180,6 +191,7 @@ input[name="topic"]:checked + label, .clicked, input[name="topic"]:hover + label
 input[name="check"]:checked{
     background-color: #F04646;
     border: none;
+    accent-color: #F04646;
 }
 .next>a:visited,.back>a:visited{
     text-decoration: none;
@@ -187,8 +199,14 @@ input[name="check"]:checked{
 }
 .back{
     background-color: #0097D8;
+    background: linear-gradient(to left, #0097D8 50%, #C6EDFE 50%)right;
+    background-size: 300% 100%;
+    transition: .5s ease-out;
     color: white;
     border: none;
+}
+.back:hover{
+    background-position: left;
 }
 .next:hover,.next-inactive{
     background-color: #FCD1D1;
@@ -202,10 +220,10 @@ input[name="topic"] + label{
 input[name="topic"] + label:hover{
     padding-left: 30px;
 }
-.next>a:hover,.next-inactive{
+.next:hover>a,.next-inactive{
     color: #F04646;
 }
-.back>a:hover,.back-inactive{
+.back:hover>a,.back-inactive{
     color: #0097D8;
 }
 .back:hover,.back-inactive{
@@ -222,4 +240,7 @@ span,#dynamic-letter-story{
 }
 .hidden{
     display: none;
+}
+.content>p{
+    width: 85%;
 }
