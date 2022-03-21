@@ -39,6 +39,17 @@ nav>a:hover>.step-subtitle, nav>a:hover{
 .current-step, .step-subtitle{
     color: white;
 }
+#dynamic-letter>p>a:visited{
+    text-decoration: none;
+}
+#dynamic-letter>p>a,#dynamic-letter>a{
+    text-decoration: none;
+    color: #0097D8;
+}
+#calls-to-action>a{
+    text-decoration: none;
+    color:#F04646
+}
 body{
     margin: 0;
     overflow: hidden;
@@ -96,15 +107,16 @@ form{
     padding: 20px;
     color: #0097D8;
 }
-.selectable{
+#selectable{
     color: #F04646;
 }
-.selectable:hover{
+#selectable:hover{
     color: #bb0606;
 }
 button{
-    padding: 10px;
-    font-size: 1.2rem;
+    padding: 10px 12px 10px 12px;
+    font-size: 1.1rem;
+    border-radius: 5px;
 }
 #close{
     background-color: black;
@@ -122,7 +134,7 @@ button{
     background-position: left;
     border: 1px black solid;
     color: black;
-    padding: 9px;
+    padding: 9px 11px 9px 11px;
 }
 @keyframes toggle {
     from {right: 3%;}
@@ -213,6 +225,7 @@ input[name="check"]:checked{
     color: #F04646;
     border: 1px #F04646 solid;
     padding: 9px;
+    padding: 9px 11px 9px 11px;
 }
 input[name="topic"] + label{
     transition: all .3s ease-in;
@@ -231,6 +244,7 @@ input[name="topic"] + label:hover{
     color: #0097D8;
     border: 1px #0097D8 solid;
     padding: 9px;
+    padding: 9px 11px 9px 11px;
 }
 span,#dynamic-letter-story{
     color:#0097D8;
