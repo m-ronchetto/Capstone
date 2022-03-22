@@ -1,10 +1,10 @@
+/* general */
 header{
     display: flex;
     padding-left: 2%;
     padding-right: 2%;
     position: sticky;
     top: 0;
-    /* border-bottom: 1px black solid; */
     background-color: black;
 }
 h2{
@@ -23,32 +23,6 @@ nav{
     margin-left: auto;
     margin-right: 0;
     width: fit-content;
-}
-nav>a{
-    padding: 5px;
-    text-decoration: none;
-    height:fit-content;
-    color: #909090;
-}
-.step-subtitle{
-    color: #909090;
-}
-nav>a:hover>.step-subtitle, nav>a:hover{
-    color:#F04646;
-}
-.current-step, .step-subtitle{
-    color: white;
-}
-#dynamic-letter>p>a:visited{
-    text-decoration: none;
-}
-#dynamic-letter>p>a,#dynamic-letter>a{
-    text-decoration: none;
-    color: #0097D8;
-}
-#calls-to-action>a{
-    text-decoration: none;
-    color:#F04646
 }
 body{
     margin: 0;
@@ -107,12 +81,23 @@ form{
     padding: 20px;
     color: #0097D8;
 }
-#selectable{
-    color: #F04646;
+.step-subtitle-hidden{
+    display:none;
 }
-#selectable:hover{
-    color: #bb0606;
+.hidden{
+    display: none;
 }
+.content>p{
+    width: 85%;
+}
+.button-cont{
+    margin-left: auto;
+    margin-right: 0;
+    width: fit-content;
+}
+
+
+/* buttons */
 button{
     padding: 10px 12px 10px 12px;
     font-size: 1.1rem;
@@ -136,6 +121,90 @@ button{
     color: black;
     padding: 9px 11px 9px 11px;
 }
+.next{
+    background: linear-gradient(to left, #F04646 50%, #FCD1D1 50%)right;
+    background-size: 300% 100%;
+    transition: .5s ease-out;
+    color: white;
+    border: none;
+}
+.next:hover{
+    background-position: left;
+}
+.next>a,.back>a{
+    text-decoration: none;
+    color: white;
+}
+.next>a:visited,.back>a:visited{
+    text-decoration: none;
+    color: white;
+}
+.next:hover,.next-inactive{
+    background-color: #FCD1D1;
+    color: #F04646;
+    border: 1px #F04646 solid;
+    padding: 9px;
+    padding: 9px 11px 9px 11px;
+}
+.next:hover>a,.next-inactive{
+    color: #F04646;
+}
+.back{
+    background-color: #0097D8;
+    background: linear-gradient(to left, #0097D8 50%, #C6EDFE 50%)right;
+    background-size: 300% 100%;
+    transition: .5s ease-out;
+    color: white;
+    border: none;
+}
+.back:hover{
+    background-position: left;
+}
+.back:hover>a,.back-inactive{
+    color: #0097D8;
+}
+.back:hover,.back-inactive{
+    background-color: #C6EDFE;
+    color: #0097D8;
+    border: 1px #0097D8 solid;
+    padding: 9px;
+    padding: 9px 11px 9px 11px;
+}
+
+/* links */
+nav>a{
+    padding: 5px;
+    text-decoration: none;
+    height:fit-content;
+    color: #909090;
+}
+.step-subtitle{
+    color: #909090;
+}
+nav>a:hover>.step-subtitle, nav>a:hover{
+    color:#F04646;
+}
+.current-step, .step-subtitle{
+    color: white;
+}
+#dynamic-letter>p>a:visited, #dynamic-letter>p>a,#dynamic-letter>a, #calls-to-action>a{
+    text-decoration: none;
+}
+.unselected{
+    color: #0097D8;
+}
+.unselected:hover{
+    color: #06597d;
+}
+.selected{
+    color: #F04646;
+}
+.selected:hover{
+    color: #bb0606;
+}
+
+
+/* animations */
 @keyframes toggle {
     from {right: 3%;}
     to {right: -30%;}
@@ -159,30 +228,14 @@ button{
     top: -95px;
     visibility: hidden;
 }
-.next{
-    background: linear-gradient(to left, #F04646 50%, #FCD1D1 50%)right;
-    background-size: 300% 100%;
-    transition: .5s ease-out;
-    color: white;
-    border: none;
-}
-.next:hover{
-    background-position: left;
-}
-.next>a,.back>a{
-    text-decoration: none;
-    color: white;
-}
 .horizontal{
     flex-direction: row;
 }
+
+
+/* form inputs */
 label{
     margin-right:16px;
-}
-.button-cont{
-    margin-left: auto;
-    margin-right: 0;
-    width: fit-content;
 }
 input[name="topic"]{
     position:fixed;
@@ -205,56 +258,9 @@ input[name="check"]:checked{
     border: none;
     accent-color: #F04646;
 }
-.next>a:visited,.back>a:visited{
-    text-decoration: none;
-    color: white;
-}
-.back{
-    background-color: #0097D8;
-    background: linear-gradient(to left, #0097D8 50%, #C6EDFE 50%)right;
-    background-size: 300% 100%;
-    transition: .5s ease-out;
-    color: white;
-    border: none;
-}
-.back:hover{
-    background-position: left;
-}
-.next:hover,.next-inactive{
-    background-color: #FCD1D1;
-    color: #F04646;
-    border: 1px #F04646 solid;
-    padding: 9px;
-    padding: 9px 11px 9px 11px;
-}
 input[name="topic"] + label{
     transition: all .3s ease-in;
 }
 input[name="topic"] + label:hover{
     padding-left: 30px;
-}
-.next:hover>a,.next-inactive{
-    color: #F04646;
-}
-.back:hover>a,.back-inactive{
-    color: #0097D8;
-}
-.back:hover,.back-inactive{
-    background-color: #C6EDFE;
-    color: #0097D8;
-    border: 1px #0097D8 solid;
-    padding: 9px;
-    padding: 9px 11px 9px 11px;
-}
-span,#dynamic-letter-story{
-    color:#0097D8;
-}
-.step-subtitle-hidden{
-    display:none;
-}
-.hidden{
-    display: none;
-}
-.content>p{
-    width: 85%;
 }

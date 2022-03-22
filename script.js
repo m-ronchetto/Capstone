@@ -1,30 +1,25 @@
 //dynamic text inputs
 document.getElementById("name-input").addEventListener("input", function(){
     let name = document.getElementById("dynamic-letter-name");
-    name.style.color = "#F04646";
-    let hover = 'dynamic-letter-name:hover{ color: #bb0606}';
-    var style = document.createElement('style');
-    if (style.styleSheet) {
-        style.styleSheet.cssText = hover;
-    } else {
-        style.appendChild(document.createTextNode(hover));
-    }
-
-document.getElementsByTagName('head')[0].appendChild(style);
+    name.classList.add("selected");
+    name.classList.remove("unselected");
     text = document.getElementById("name-input").value;
     if (text.length === 0){
         text = "(name)";
-        name.style.color ="#0097D8";
+        name.classList.add("unselected");
+        name.classList.remove("selected");
     }
     document.getElementById("dynamic-letter-name").innerText = text;
 });
 document.getElementById("story-input").addEventListener("input", function(){
     let story = document.getElementById("dynamic-letter-story");
-    story.style.color = "#F04646"
+    story.classList.add("selected");
+    story.classList.remove("unselected");
     text = document.getElementById("story-input").value;
     if (text.length === 0){
         text = "(Share your story)";
-        story.style.color = "#0097D8";
+        story.classList.add("unselected");
+        story.classList.remove("selected");
     }
     document.getElementById("dynamic-letter-story").innerText = text;
 });
