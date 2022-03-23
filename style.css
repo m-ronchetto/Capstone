@@ -1,11 +1,10 @@
 /* general */
 header{
     display: flex;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 5px 3% 5px 3%;
     position: sticky;
     top: 0;
-    background-color: black;
+    background-color: #bb0642;
 }
 h2{
     margin: 0;
@@ -30,10 +29,9 @@ body{
 }
 html{
     scroll-behavior: smooth;
-    background-color: #c4c4c4;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'neue-haas-grotesk-text', sans-serif;
     margin: 0;
-    line-height: 125%;
+    line-height: 135%;
 }
 .step{
     margin: 50px 10% 500px 0;
@@ -49,19 +47,23 @@ html{
 #right-column{
     min-width: 25%;
     max-width: 25%;
-    padding: 35px;
+    padding: 25px 35px 35px 35px;
     margin-bottom: 50px;
     position: fixed;
     right: 3%;
     top: 14%;
-    background-color: white;
-    border: 1px black solid;
+    background-color: #e7e7e7;
+    border-radius: 20px;
     height: fit-content;
     word-wrap:break-word;
 }
 #left-column{
     width: 70%;
     transition: width 1s;
+}
+.content>h2{
+    font-size: 1.5rem;
+    padding-bottom: 10px;
 }
 form{
     margin-top: 16px;
@@ -70,16 +72,21 @@ form{
     width:80%;
 }
 .content{
-    background-color: white;
-    border: 1px black solid;
+    background-color:white;
+    border-radius: 20px;
     padding: 25px;
+    font-size: 1.1rem;
 }
 .tip{
-    background-color: #C6EDFE;
-    border: 1px #0097D8 solid;
+    background-color: #c6cbfe;
+    border: 1px #5a01ba solid;
+    border-radius: 20px;
     margin-top: 30px;
-    padding: 20px;
-    color: #0097D8;
+    margin-left: 25px;
+    padding: 5px 20px 5px 20px;
+    width: 65%;
+    justify-content: center;
+    color: #5a01ba;
 }
 .step-subtitle-hidden{
     display:none;
@@ -91,38 +98,60 @@ form{
     width: 85%;
 }
 .button-cont{
+    margin-top: 40px;
+    width: fit-content;
+}
+#preview-letter, .story{
+    width: 90%;
+    padding: 25px 35px 35px 35px;
+    margin: 3% 2% 3% 2%;
+    background-color: #e7e7e7;
+    border-radius: 20px;
+    height: fit-content;
+    word-wrap:break-word;
+}
+.flex{
+    display: flex;
+}
+.flex>img{
+    object-fit: cover;
+    width: 30%;
+    height: 200px;
     margin-left: auto;
     margin-right: 0;
-    width: fit-content;
+}
+.flex>div{
+    margin-right: 20px;
+    width: 60%;
 }
 
 
 /* buttons */
 button{
-    padding: 10px 12px 10px 12px;
+    padding: 10px 15px 10px 15px;
     font-size: 1.1rem;
-    border-radius: 5px;
+    border-radius: 25px;
 }
 #close{
-    background-color: black;
-    background: linear-gradient(to left, black 50%, #c4c4c4 50%)right;
+    background-color: #5e5e5e;
+    background: linear-gradient(to left, #5e5e5e 50%, #c4c4c4 50%)right;
     background-size: 300% 100%;
     transition: .5s ease-out;
     color: white;
     border: none;
     position: fixed;
     z-index: 1;
-    top: 16%;
-    right: 4%;
+    top: 17%;
+    right: 5%;
 }
 #close:hover{
     background-position: left;
-    border: 1px black solid;
-    color: black;
-    padding: 9px 11px 9px 11px;
+    border: 1px #5e5e5e solid;
+    color: #5e5e5e;
+    padding: 9px 14px 9px 14px;
 }
 .next{
-    background: linear-gradient(to left, #F04646 50%, #FCD1D1 50%)right;
+    background: linear-gradient(to left, #5a01ba 50%, #c6cbfe 50%)right;
     background-size: 300% 100%;
     transition: .5s ease-out;
     color: white;
@@ -140,20 +169,20 @@ button{
     color: white;
 }
 .next:hover,.next-inactive{
-    background-color: #FCD1D1;
-    color: #F04646;
-    border: 1px #F04646 solid;
-    padding: 9px;
-    padding: 9px 11px 9px 11px;
+    background-color: #c6cbfe;
+    color: #5a01ba;
+    border: 1px #5a01ba solid;
+    padding: 9px 14px 9px 14px;
 }
 .next:hover>a,.next-inactive{
-    color: #F04646;
+    color: #5a01ba;
 }
 .back{
-    background-color: #0097D8;
-    background: linear-gradient(to left, #0097D8 50%, #C6EDFE 50%)right;
+    background-color: #5e5e5e;
+    background: linear-gradient(to left, #5e5e5e 50%, #e5e5e5 50%)right;
     background-size: 300% 100%;
     transition: .5s ease-out;
+    margin-right: 10px;
     color: white;
     border: none;
 }
@@ -161,14 +190,14 @@ button{
     background-position: left;
 }
 .back:hover>a,.back-inactive{
-    color: #0097D8;
+    color: #5e5e5e;
 }
 .back:hover,.back-inactive{
-    background-color: #C6EDFE;
-    color: #0097D8;
-    border: 1px #0097D8 solid;
-    padding: 9px;
-    padding: 9px 11px 9px 11px;
+    background-color: #e5e5e5;
+    color: black;
+    margin-right: 10px;
+    border: 1px #5e5e5e solid;
+    padding: 9px 14px 9px 14px;
 }
 
 /* links */
@@ -176,13 +205,13 @@ nav>a{
     padding: 5px;
     text-decoration: none;
     height:fit-content;
-    color: #909090;
+    color: #f86093;
 }
 .step-subtitle{
-    color: #909090;
+    color: #f86093;
 }
 nav>a:hover>.step-subtitle, nav>a:hover{
-    color:#F04646;
+    color:white;
 }
 .current-step, .step-subtitle{
     color: white;
@@ -191,16 +220,16 @@ nav>a:hover>.step-subtitle, nav>a:hover{
     text-decoration: none;
 }
 .unselected{
-    color: #0097D8;
+    color: #5a01ba;
 }
 .unselected:hover{
-    color: #06597d;
+    color: #c6cbfe;
 }
 .selected{
-    color: #F04646;
+    color: #f86093;
 }
 .selected:hover{
-    color: #bb0606;
+    color: #bb0642;
 }
 
 
@@ -225,7 +254,7 @@ nav>a:hover>.step-subtitle, nav>a:hover{
 .anchor{
     display: block;
     position: relative;
-    top: -95px;
+    top: -2%;
     visibility: hidden;
 }
 .horizontal{
@@ -249,18 +278,22 @@ input[name="topic"]{
     margin-bottom: 15px;
 }
 input[name="topic"]:checked + label, .clicked, input[name="topic"]:hover + label{
-    background-color: #FCD1D1;
-    border: 1px #F04646 solid;
-    color: #F04646;
+    background-color: #ffcbdc;
+    border: 1px #bb0642 solid;
+    color: #bb0642;
 }
 input[name="check"]:checked{
-    background-color: #F04646;
+    background-color: #bb0642;
     border: none;
-    accent-color: #F04646;
+    accent-color: #bb0642;
 }
 input[name="topic"] + label{
     transition: all .3s ease-in;
 }
 input[name="topic"] + label:hover{
     padding-left: 30px;
+}
+input[type="text"]{
+    font-size:1rem;
+    font-family: 'neue-haas-grotesk-text', sans-serif;
 }
