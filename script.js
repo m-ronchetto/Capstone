@@ -169,6 +169,7 @@ document.getElementById("zip-submit").addEventListener("click", function(event){
     //checks if it is zip code length
     let county = document.getElementById("dynamic-letter-county");
     const formTarget = document.getElementById("representative-form");
+    const error = document.getElementById("error");
     formTarget.innerHTML = "";
     selectedRepresentatives = [];
     updateRepresentatives();
@@ -178,6 +179,7 @@ document.getElementById("zip-submit").addEventListener("click", function(event){
         if (text in zipdata){
             // zip code is valid
             // attributes: "County", "US Senate 1", "US Senate 2", "US House", "MO Senate", "Governor", "Mayor"
+            error.classList.add("hidden");
             const data = zipdata[text];
             let i = 0;
 
@@ -221,22 +223,17 @@ document.getElementById("zip-submit").addEventListener("click", function(event){
                 formTarget.appendChild(container);
                 i = i+1;
             }
+            location.hash = "#";
+            location.hash = "#select-representatives";
            
 
         } else{
             // handle case if zip not in list of zips
             // error: not a supported zip code
-            const container = document.createElement("div");  
-            container.classList.add("tip");
-            container.id = "error";
+            error.classList.remove("hidden");
 
-            const container_text = document.createElement("p");
-            container_text.innerText = "Error: Your zip code is not currently supported at this time. Write change has data for St. Louis County and St. Louis City County only.";
-
-            container.appendChild(container_text);
-            formTarget.appendChild(container);
+            error.firstChild.innerText = "Error: Your zip code is not currently supported at this time. Write change has data for St. Louis County and St. Louis City County only.";
             
-            console.log("L + ratio");
             county.innerText = "(location)";
             county.classList.add("unselected");
             county.classList.remove("selected");
@@ -244,17 +241,10 @@ document.getElementById("zip-submit").addEventListener("click", function(event){
         }
     } else{
         // error: invalid zip code format
-        const container = document.createElement("div");  
-            container.classList.add("tip");
-            container.id = "error";
+        error.classList.remove("hidden");
 
-            const container_text = document.createElement("p");
-            container_text.innerText = "Error: Please enter a 5 digit zip code.";
-
-            container.appendChild(container_text);
-            formTarget.appendChild(container);
-
-        console.log("rip bozo");
+        error.firstChild.innerText = "Error: Please enter a 5 digit zip code.";
+        
         county.innerText = "(location)";
         county.classList.add("unselected");
         county.classList.remove("selected");
