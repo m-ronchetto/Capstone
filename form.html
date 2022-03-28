@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.typekit.net/zmj0ief.css">
         <link rel="stylesheet" href="style.css"/>
+        <script type="text/javascript" src="data/zipdata.js"></script>
     </head>
     <body>
         <header>
@@ -26,12 +27,19 @@
                 <div class="step" id="step-1-div">
                     <div class="content">
                         <h2>
-                            Let's get this letter started.
+                            Let's <span class="highlighting">find your representatives.</span>
                         </h2>
-                        <form class="horizontal">
+                        <div class="tip" id="tip-1">
+                            <p>
+                                This information allows representatives to know you're a constituent.
+                            </p>
+                        </div>
+                        <form id="horizontal">
                             <label>Zip Code</label>
-                            <input type="text">
+                            <input id="zip-input" type="text" required>
+                            <input id="zip-submit" type="submit" value="Submit">
                         </form>
+                        <form id="representative-form"></form>
                         <div class="button-cont">
                             <button class="back-inactive" type="button">
                                 Back to Topic Selection
@@ -41,16 +49,16 @@
                             </button>
                         </div>
                     </div> 
-                    <div class="tip">
-                        <p>
-                            This information allows representatives to know you're a constituent.
-                        </p>
-                    </div>
                 </div>
                 <a class="anchor" id="step-2"></a>
                 <div class="step" id="step-2-div">
                     <div class="content">
-                        <h2>Let's get to know you.</h2>
+                        <h2>Let's get to know <span class="highlighting">you.</span></h2>
+                        <div class="tip" id="tip-2">
+                            <p>
+                                Representatives value knowing who their letters are going to.
+                            </p>
+                        </div>  
                         <form class="horizontal">
                             <label>What's Your Name?</label>
                             <input id="name-input" type="text">
@@ -64,16 +72,16 @@
                             </button>
                         </div>
                     </div>
-                    <div class="tip">
-                        <p>
-                            Representatives value knowing who their letters are going to.
-                        </p>
-                    </div>  
                 </div>
                 <a class="anchor" id="step-3"></a>
                 <div class="step" id="step-3-div">
                     <div class="content">
-                        <h2>Choose a prompt to guide your story.</h2>
+                        <h2>Choose a prompt to <span class="highlighting">guide your story.</span></h2>
+                        <div class="tip" id="tip-3">
+                            <p>
+                                Personalized letters are more likely to get an individualized response from representatives.
+                            </p>
+                        </div>
                         <p>
                             Personal stories are what representatives remeber most from reading letters. Some representatives even print these stories as a reminder of who they are helping as they sign laws!
                         </p>
@@ -94,16 +102,16 @@
                             </button>
                         </div>
                     </div> 
-                    <div class="tip">
-                        <p>
-                            Personalized letters are more likely to get an individualized response from representatives.
-                        </p>
-                    </div>
                 </div>
                 <a class="anchor" id="step-4"></a>
                 <div class="step" id="step-4-div">
                     <div class="content">
-                        <h2>Share a story of how this topic is important to you.</h2>
+                        <h2><span class="highlighting">Share a story</span> of how this topic is important to you.</h2>
+                        <div class="tip" id="tip-4">
+                            <p>
+                                You’re nearly done! This step will make your letter shine.
+                            </p>
+                        </div> 
                         <p>
                             Here are some ideas to get you started:
                         </p>
@@ -129,17 +137,17 @@
                                 <a href="#step-5">Next: Call to Action</a>
                             </button>
                         </div>
-                    </div>
-                    <div class="tip">
-                        <p>
-                            You’re nearly done! This step will make your letter shine.
-                        </p>
-                    </div>   
+                    </div>  
                 </div>
                 <a class="anchor" id="step-5"></a>
                 <div class="step" id="step-5-div">
                     <div class="content">
-                        <h2>Choose a call to action for your representative</h2>
+                        <h2>Choose a <span class="highlighting">call to action</span> for your representative</h2>
+                        <div class="tip" id="tip-5">
+                            <p>
+                                Last step! Specific action items let your representative know how to best take action.
+                            </p>
+                        </div>
                         <form>
                             <div class="checks">
                                 <input class="check" name="check" id="action-1" type="checkbox">
@@ -167,11 +175,6 @@
                             </button>
                         </div>
                     </div> 
-                    <div class="tip">
-                        <p>
-                            Last step! Specific action items let your representative know how to best take action.
-                        </p>
-                    </div>
                 </div>
             </div>
             <div id="right-column">
@@ -179,7 +182,7 @@
                 </h2>
                 <div id="dynamic-letter">
                     <p>Hello <a id="dynamic-letter-rep" class="unselected" href="#step-1">(representative)</a>,</p>
-                    <p> My name is <a id="dynamic-letter-name" class="unselected" href="#step-2">(name)</a>, and I am a constituent from St. Louis.</p>
+                    <p> My name is <a id="dynamic-letter-name" class="unselected" href="#step-2">(name)</a>, and I am a constituent from <a id="dynamic-letter-county" class="unselected" href="#step-1">(location)</a> county.</p>
                     <p>
                         <span class="selected">Air pollution</span> contributes to premature death, heart attacks, aggravated
                         asthma, and reduced lung function. St. Louis has been in violation of the

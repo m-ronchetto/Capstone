@@ -84,13 +84,27 @@ form{
 .tip{
     background-color: #c6cbfe;
     border: 1px #5a01ba solid;
-    border-radius: 20px;
     margin-top: 30px;
-    margin-left: 25px;
+    border-radius: 20px;
     padding: 5px 20px 5px 20px;
     width: 65%;
+    font-size: .9rem;
     justify-content: center;
     color: #5a01ba;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.visible{
+    display:block;
+    animation-name: tip-opacity;
+    animation-duration:  1s;
+    opacity: 1;
+}
+#error{
+    background-color: #fb9ebd;
+    color: #bb0642;
+    border: 1px #bb0642 solid;
+    opacity: 1;
 }
 .step-subtitle-hidden{
     display:none;
@@ -128,13 +142,29 @@ form{
     margin-right: 20px;
     width: 60%;
 }
+.highlighting{
+    background-image: linear-gradient(#f86093, #f86093);
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    background-size: 100% 2px;
+    transition: background-size .5s, background-position .3s ease-in .5s;
+    padding: 5px 3px 5px 3px;
+}
+.highlighting:hover {
+    background-size: 100% 100%;
+    background-position: 0% 0%;
+    transition: background-position .5s, background-size .3s ease-in .5s;
+}
 
 
 /* buttons */
-button{
+button, #zip-submit{
     padding: 10px 15px 10px 15px;
     font-size: 1.1rem;
     border-radius: 25px;
+}
+#zip-submit{
+    margin-left: 20px;
 }
 #close{
     background-color: #5e5e5e;
@@ -154,14 +184,14 @@ button{
     color: #5e5e5e;
     padding: 9px 14px 9px 14px;
 }
-.next{
+.next, #zip-submit{
     background: linear-gradient(to left, #5a01ba 50%, #c6cbfe 50%)right;
     background-size: 300% 100%;
     transition: .5s ease-out;
     color: white;
     border: none;
 }
-.next:hover{
+.next:hover, #zip-submit:hover{
     background-position: left;
 }
 .next>a,.back>a{
@@ -172,7 +202,7 @@ button{
     text-decoration: none;
     color: white;
 }
-.next:hover,.next-inactive{
+.next:hover,.next-inactive, #zip-submit:hover{
     background-color: #c6cbfe;
     color: #5a01ba;
     border: 1px #5a01ba solid;
@@ -261,8 +291,12 @@ nav>a:hover>.step-subtitle, nav>a:hover{
     top: -2%;
     visibility: hidden;
 }
-.horizontal{
+#horizontal{
     flex-direction: row;
+}
+#horizontal>label{
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 
@@ -301,3 +335,24 @@ input[type="text"]{
     font-size:1rem;
     font-family: 'neue-haas-grotesk-text', sans-serif;
 }
+
+
+/* mobile compatibility */
+@media screen and (max-width: 992px) {
+    #right-column {
+      display: none;
+    }
+    #left-column{
+        width: 95%;
+    }
+    h2{
+        line-height: 170%;
+    }
+    #close{
+        display: none;
+    }
+    html{
+        font-size: .8rem;
+    }
+  }
+  
