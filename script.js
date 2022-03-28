@@ -124,6 +124,49 @@ document.getElementById("close").addEventListener("click", function(){
     }
 });
 
+// document.getElementById("preview-button").addEventListener("click", function(){
+//     let sidebar = document.getElementById("right-column");
+//     let left = document.getElementById("mini-left");
+//     //make full screen
+//     if (sidebar.classList.contains("hide-preview")){
+//         sidebar.classList.remove("hide-preview");
+//         sidebar.classList.add("show-preview");
+//         setTimeout(()=>{
+//             if (sidebar.classList.contains("show-preview")){
+//                 sidebar.classList.remove("show-preview");
+//             }
+//         }, 1000);
+//         sidebar.style.display = "block";
+//         document.getElementById("close").innerText = "Close Preview";
+//         left.classList.add("hide-left"); 
+//     }
+//     else if (!left.classList.contains("hide-left")){
+//         sidebar.classList.remove("hide-preview");
+//          sidebar.classList.add("show-preview");
+//         setTimeout(()=>{
+//             if (sidebar.classList.contains("show-preview")){
+//                 sidebar.classList.remove("show-preview");
+//             }
+//         }, 1000);
+//         sidebar.style.display = "block";
+//         document.getElementById("close").innerText = "Show Preview";
+//         left.classList.add("hide-left"); 
+//     }
+//     //minimize to hidden 
+//     else{
+//         sidebar.classList.remove("show-preview");
+//         sidebar.classList.add("hide-preview");       
+//         setTimeout(() => {
+//             if (sidebar.classList.contains("hide-preview")){
+//                 sidebar.style.display = "none";
+//             }
+//         }, 900);
+//         document.getElementById("close").innerText = "Show Preview";
+//         console.log(sidebar.style.display);
+//         left.classList.remove("hide-left");
+//     }
+// });
+
 //zipcode matching user to representative:
 //step 1: detect input and validate it as a zipcode, and particularly one covered by my table
 //step 2: find the zipcode the user entered in my table and return a list of representatives

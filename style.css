@@ -289,6 +289,9 @@ nav>a:hover>.step-subtitle, nav>a:hover{
 #submit-anchor{
     height: 50%;
 }
+.hide-left{
+    visibility: hidden;
+}
 
 
 /* animations */
@@ -305,9 +308,22 @@ nav>a:hover>.step-subtitle, nav>a:hover{
     animation-duration:  1s;
     animation-direction: reverse;
 }
+@keyframes preview-toggle{
+    from {right: 3%; width:25%;}
+    to {right: 60%; width:80%;}
+}
 #left-column.wide{
     width: 100%;
     transition: width 1s;
+}
+.hide-preview{
+    animation-name: toggle;
+    animation-duration:  1s;
+}
+.show-preview{
+    animation-name: toggle;
+    animation-duration:  1s;
+    animation-direction: reverse;
 }
 .anchor{
     display: block;
