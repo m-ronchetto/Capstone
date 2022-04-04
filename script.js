@@ -1,32 +1,46 @@
 //dynamic text inputs
 document.getElementById("name-input").addEventListener("input", function(){
     let name = document.getElementById("dynamic-letter-name");
+    let active = document.getElementsByClassName("active-text");
     name.classList.add("selected");
     name.classList.remove("unselected");
     text = document.getElementById("name-input").value;
+    Array.from(active).forEach((el) => el.classList.remove("active-text"));
+    name.classList.add("active-text");
     if (text.length === 0){
         text = "(name)";
         name.classList.add("unselected");
         name.classList.remove("selected");
     }
-    document.getElementById("dynamic-letter-name").innerText = text;
+    name.innerText = text;
 });
 document.getElementById("story-input").addEventListener("input", function(){
     let story = document.getElementById("dynamic-letter-story");
+    let active = document.getElementsByClassName("active-text");
     story.classList.add("selected");
     story.classList.remove("unselected");
     text = document.getElementById("story-input").value;
+    Array.from(active).forEach((el) => el.classList.remove("active-text"));
+    story.classList.add("active-text");
     if (text.length === 0){
         text = "(Share your story)";
         story.classList.add("unselected");
         story.classList.remove("selected");
     }
-    document.getElementById("dynamic-letter-story").innerText = text;
+    story.innerText = text;
 });
 
 //dynamnic checkbox inputs
-function updateAction(checkBoxId, divId){
-    let el = document.getElementById(checkBoxId);
+function updateAction(el, divId){
+    if (el.checked){
+        document.getElementById(divId).classList.remove("hidden");
+    }
+    else{
+        document.getElementById(divId).classList.add("hidden");
+    }
+}
+function updateRadioAction(radioId, divId){
+    let el = document.getElementById(radioId);
     if (el.checked){
         document.getElementById(divId).classList.remove("hidden");
     }
@@ -48,6 +62,23 @@ function checkClickFunction(event, el){
     }
     el.setAttribute("checked", !el.getAttribute("checked"));
 }
+function checkRadioFunction(event, el){
+    event.stopPropagation();
+    let parent = el.parentElement;
+    if (parent.classList.contains("clicked")){
+        parent.classList.remove("clicked");
+        el.removeAttribute("checked");
+    }
+    else{
+        Array.from(document.getElementsByClassName("radio")).forEach(
+            (pars) => {
+                pars.classList.remove("clicked")
+                pars.firstElementChild.removeAttribute("checked");
+        });
+        parent.classList.add("clicked");
+        el.setAttribute("checked", true);
+    }
+}
 
 // if parent of checkbox clicked, pass event on to child
 // preventDefault to account for clicking on the label - 
@@ -61,16 +92,23 @@ function checksClickFunction(event, el){
     child.click();
 }
 
-Array.from(document.getElementsByClassName("check")).forEach((el, index, fullArray) => el.addEventListener("click", function(event){
+Array.from(document.getElementsByClassName("check")).forEach((el, index) => el.addEventListener("click", function(event){
     checkClickFunction(event, el);
-    updateAction("action-"+(index+1), "action-"+(index+1)+"-li");
+    updateAction(el, "action-"+(index+1)+"-li");
 }));
 Array.from(document.getElementsByClassName("checks")).forEach((el) => el.addEventListener("click", function(event){
     checksClickFunction(event, el);
 }));
+Array.from(document.getElementsByClassName("radio")).forEach((el, index) => el.addEventListener("click", function(event){
+    event.preventDefault();
+    let child = el.firstElementChild;
+    checkRadioFunction(event, child);    
+}));
 
 //current step in nav bar
 function currentStep(step){
+    let progress = document.getElementById("percent-done");
+    progress.style.width = (20*step + "%");
     Array.from(document.getElementsByClassName("current-step")).forEach((el) => el.classList.remove("current-step"));
         document.getElementById("step-"+step+"-header").classList.add("current-step");
     Array.from(document.getElementsByClassName("step-subtitle")).forEach(function(el){
@@ -98,74 +136,60 @@ function currentStep(step){
 document.getElementById("close").addEventListener("click", function(){
     let sidebar = document.getElementById("right-column");
     let left = document.getElementById("left-column");
+    let submit = document.getElementById("submit-button");
     if (sidebar.classList.contains("hide")){
+        submit.style.display = "none";
+        sidebar.style.visibility = "visible";
         sidebar.classList.remove("hide");
         sidebar.classList.add("show");
-        setTimeout(()=>{
-            if (sidebar.classList.contains("show")){
-                sidebar.classList.remove("show");
-            }
-        }, 1000);
-        sidebar.style.display = "block";
         document.getElementById("close").innerText = "Close Preview";
         left.classList.remove("wide"); 
     }
-    else{
+    else if (sidebar.classList.contains("full-preview")){
+        submit.style.display = "none";
+        sidebar.classList.remove("full-preview");
+        sidebar.classList.add("show");
+        document.getElementById("close").innerText = "Close Preview";
+        left.classList.remove("hide-left"); 
+    }  else {
+        submit.style.display = "none";
         sidebar.classList.remove("show");
-        sidebar.classList.add("hide");       
+        sidebar.classList.add("hide"); 
+        // hide from DOM after animation finishes, if the button hasn't been clicked again      
         setTimeout(() => {
             if (sidebar.classList.contains("hide")){
-                sidebar.style.display = "none";
+                sidebar.style.visibility = "hidden";
             }
-        }, 900);
+        }, 1000);
         document.getElementById("close").innerText = "Show Preview";
         console.log(sidebar.style.display);
         left.classList.add("wide");
     }
 });
 
-// document.getElementById("preview-button").addEventListener("click", function(){
-//     let sidebar = document.getElementById("right-column");
-//     let left = document.getElementById("mini-left");
-//     //make full screen
-//     if (sidebar.classList.contains("hide-preview")){
-//         sidebar.classList.remove("hide-preview");
-//         sidebar.classList.add("show-preview");
-//         setTimeout(()=>{
-//             if (sidebar.classList.contains("show-preview")){
-//                 sidebar.classList.remove("show-preview");
-//             }
-//         }, 1000);
-//         sidebar.style.display = "block";
-//         document.getElementById("close").innerText = "Close Preview";
-//         left.classList.add("hide-left"); 
-//     }
-//     else if (!left.classList.contains("hide-left")){
-//         sidebar.classList.remove("hide-preview");
-//          sidebar.classList.add("show-preview");
-//         setTimeout(()=>{
-//             if (sidebar.classList.contains("show-preview")){
-//                 sidebar.classList.remove("show-preview");
-//             }
-//         }, 1000);
-//         sidebar.style.display = "block";
-//         document.getElementById("close").innerText = "Show Preview";
-//         left.classList.add("hide-left"); 
-//     }
-//     //minimize to hidden 
-//     else{
-//         sidebar.classList.remove("show-preview");
-//         sidebar.classList.add("hide-preview");       
-//         setTimeout(() => {
-//             if (sidebar.classList.contains("hide-preview")){
-//                 sidebar.style.display = "none";
-//             }
-//         }, 900);
-//         document.getElementById("close").innerText = "Show Preview";
-//         console.log(sidebar.style.display);
-//         left.classList.remove("hide-left");
-//     }
-// });
+document.getElementById("preview-button").addEventListener("click", function(){
+    let sidebar = document.getElementById("right-column");
+    let left = document.getElementById("left-column");
+    let submit = document.getElementById("submit-button");
+    //make full screen
+    sidebar.classList.remove("hide");
+    sidebar.classList.remove("show");
+    sidebar.classList.add("full-preview");
+    submit.style.display = "block";
+    sidebar.style.visibility = "visible";
+    document.getElementById("close").innerText = "Minimimze Preview";
+    left.classList.remove("wide");
+    left.classList.add("hide-left"); 
+});
+
+document.getElementById("submit-button").addEventListener("click", function(){
+    document.getElementById("close").style.display = "none";
+    const right = document.getElementById("right-column");
+    let submit = document.getElementById("submit-button");
+    right.classList.add("hide");
+    submit.style.display = "none";
+    right.classList.remove("full-preview");
+});
 
 //zipcode matching user to representative:
 //step 1: detect input and validate it as a zipcode, and particularly one covered by my table

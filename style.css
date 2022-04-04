@@ -1,13 +1,14 @@
 /* general */
 header{
     display: flex;
-    padding: 5px 3% 5px 3%;
+    padding: 5px 6% 5px 6%;
     position: sticky;
     top: 0;
     background-color: #bb0642;
 }
-h2{
+h2, #mini-left>h2{
     margin: 0;
+    line-height: 170%;
     font-size: 1.1rem;
 }
 h1{
@@ -24,11 +25,14 @@ nav{
     width: fit-content;
 }
 img{
-    padding: 20px;
-    width: 40%;
+    padding-top: 20px;
+    width: 70%;
 }
 body{
     margin: 0;
+}
+ul{
+    padding-left: 20px;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
@@ -45,6 +49,11 @@ html{
     font-family: 'neue-haas-grotesk-text', sans-serif;
     margin: 0;
     line-height: 135%;
+    background-color: #f5f5f7;
+    color: #2E3136;
+}
+a{
+    text-decoration: none;
 }
 .step{
     margin: 50px 10% 500px 0;
@@ -54,26 +63,54 @@ html{
 }
 #container{
     display: flex;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 6%;
+    margin-right: 6%;
+}
+#progress-bar{
+    background-color: #c6cbfe;
+    height: 3%;
+    width: 100%;
+    position: fixed;
+    top: 8%;
+}
+#percent-done{
+    height: 3%;
+    width: 0%;
+    position: fixed;
+    top: 8%;
+    background-color: #5a01ba;
+    transition: width .5s;
+    z-index: 1;
 }
 #right-column{
-    min-width: 25%;
-    max-width: 25%;
-    padding: 25px 35px 35px 35px;
+    min-width: 30%;
+    padding: 45px 55px 35px 55px;
     margin-bottom: 50px;
     position: fixed;
-    right: 3%;
-    top: 14%;
-    background-color: #e7e7e7;
-    border-radius: 20px;
+    top: 16%;
+    /* background-color: #f8e8e8; */
+    background-color: white;
+    border-radius: 2px;
+    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
     overflow-y: auto;
     max-height: 70%;
     height: fit-content;
     word-wrap:break-word;
+    transition: right 1s, width 1s, max-width 1s;
+}
+#intro{
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+}
+#end{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#submit-button{
+    display: none;
 }
 #left-column{
-    width: 70%;
+    width: 50%;
     transition: width 1s;
 }
 .content>h2{
@@ -86,9 +123,10 @@ form{
     flex-direction: column;
     width:80%;
 }
+#form-5{
+    margin-bottom: 0;
+}
 .content{
-    background-color:white;
-    border-radius: 20px;
     padding: 0px 25px 25px 25px;
     font-size: 1.1rem;
 }
@@ -108,6 +146,10 @@ form{
     color: #5a01ba;
     opacity: 0;
     transition: opacity 1s;
+}
+#tip-5{
+    margin-top: 15px;
+    font-size: .8rem;
 }
 .tip>p{
     margin: 10px 0 10px 0;
@@ -140,11 +182,15 @@ form{
     margin-top: 20px;
     width: fit-content;
 }
+#button-cont-5{
+    margin-top: 0px;
+    width: fit-content;
+}
 #preview-letter, .story{
     width: 90%;
     padding: 25px 35px 35px 35px;
     margin: 3% 2% 3% 2%;
-    background-color: #e7e7e7;
+    background-color: white;
     border-radius: 20px;
     height: fit-content;
     word-wrap:break-word;
@@ -170,6 +216,7 @@ form{
     background-size: 100% 2px;
     transition: background-size .5s, background-position .3s ease-in .5s;
     padding: 5px 3px 5px 3px;
+    cursor: pointer;
 }
 .highlighting:hover {
     background-size: 100% 100%;
@@ -183,21 +230,22 @@ button, #zip-submit{
     padding: 10px 15px 10px 15px;
     font-size: 1.1rem;
     border-radius: 25px;
+    cursor: pointer;
 }
 #zip-submit{
     margin-left: 20px;
 }
 #close{
     background-color: #5e5e5e;
-    background: linear-gradient(to left, #5e5e5e 50%, #c4c4c4 50%)right;
+    background: linear-gradient(to left, #5e5e5e 50%, #c4c4c4 50%) right;
     background-size: 300% 100%;
     transition: .5s ease-out;
     color: white;
     border: none;
     position: fixed;
     z-index: 1;
-    top: 17%;
-    right: 5%;
+    top: 19%;
+    right: 10%;
 }
 #close:hover{
     background-position: left;
@@ -206,7 +254,7 @@ button, #zip-submit{
     padding: 9px 14px 9px 14px;
 }
 .next, #zip-submit{
-    background: linear-gradient(to left, #5a01ba 50%, #c6cbfe 50%)right;
+    background: linear-gradient(to left, #5a01ba 50%, #c6cbfe 50%) right;
     background-size: 300% 100%;
     transition: .5s ease-out;
     color: white;
@@ -234,7 +282,7 @@ button, #zip-submit{
 }
 .back{
     background-color: #5e5e5e;
-    background: linear-gradient(to left, #5e5e5e 50%, #e5e5e5 50%)right;
+    background: linear-gradient(to left, #5e5e5e 50%, #e5e5e5 50%) right;
     background-size: 300% 100%;
     transition: .5s ease-out;
     margin-right: 10px;
@@ -281,32 +329,39 @@ nav>a:hover>.step-subtitle, nav>a:hover{
     color: #c6cbfe;
 }
 .selected{
-    color: #f86093;
+    color: #bb0642;
+    transition: font-size 1s;
+    cursor: pointer;
 }
 .selected:hover{
-    color: #bb0642;
+    color: #fdb2cb;
 }
 #submit-anchor{
     height: 50%;
 }
 .hide-left{
+    width: 10% !important;
     visibility: hidden;
 }
 
 
 /* animations */
 @keyframes toggle {
-    from {right: 3%;}
+    from {right: 8%;}
     to {right: -30%;}
 }
 .hide{
-    animation-name: toggle;
-    animation-duration:  1s;
+    /* animation-name: toggle;
+    animation-duration:  1s; */
+    max-width: 30%;
+    right: -40%;
 }
 .show{
-    animation-name: toggle;
+    /* animation-name: toggle;
     animation-duration:  1s;
-    animation-direction: reverse;
+    animation-direction: reverse; */
+    right: 8%;
+    max-width: 30%;
 }
 @keyframes preview-toggle{
     from {right: 3%; width:25%;}
@@ -316,19 +371,21 @@ nav>a:hover>.step-subtitle, nav>a:hover{
     width: 100%;
     transition: width 1s;
 }
-.hide-preview{
-    animation-name: toggle;
-    animation-duration:  1s;
-}
-.show-preview{
-    animation-name: toggle;
-    animation-duration:  1s;
-    animation-direction: reverse;
+.full-preview{
+    width: 80%;
+    max-width: 80%;
+    right: 8%;
 }
 .anchor{
     display: block;
     position: relative;
-    top: -3%;
+    top: -2.5%;
+    visibility: hidden;
+}
+#select-representatives{
+    display: block;
+    position: relative;
+    top: -50px;
     visibility: hidden;
 }
 #horizontal{
@@ -345,38 +402,30 @@ label{
     margin-right:16px;
     margin-left: 5px;
 }
-input[name="topic"]{
-    position:fixed;
-    opacity: 0;
-    pointer-events: none;
+.checks>label,.radio>label, input[type="checkbox"], input[type="radio"]{
+    cursor: pointer;
 }
-.radios, .checks{
+.checks, .radio{
     background-color: #ebebeb;
     border: 1px black solid;
-    padding: 7px;
+    padding: 10px 20px 10px 10px;
     margin-bottom: 15px;
-    font-size: .9rem;
-    width: 70%;
-}
-input[name="topic"]:checked + label, .clicked, input[name="topic"]:hover + label{
-    background-color: #ffcbdc;
-    border: 1px #bb0642 solid;
-    color: #bb0642;
-}
-input[name="check"]:checked{
-    background-color: #bb0642;
-    border: none;
-    accent-color: #bb0642;
-}
-input[name="topic"] + label{
+    font-size: 1.2rem;
+    width: 100%;
     transition: all .3s ease-in;
+    cursor: pointer;
 }
-input[name="topic"] + label:hover{
+.radio:hover, .checks:hover{
+    /* background-color: #ffcbdc;
+    border: 1px #bb0642 solid;
+    color: #bb0642; */
     padding-left: 30px;
+    padding-right: 0;
 }
-input[type="text"]{
-    font-size:1rem;
-    font-family: 'neue-haas-grotesk-text', sans-serif;
+.clicked{
+    border: 1px #bb0642 solid;
+    background-color: #ffcbdc;
+    color: #bb0642;
 }
 
 
@@ -399,3 +448,66 @@ input[type="text"]{
     }
   }
   
+
+/* Hover Text Animation */
+#r1:hover span{
+   position: relative;
+   display: inline-block;
+   animation: flip 1.45s; 
+   animation-delay: calc(.05s * var(--i) - 1s);
+}
+#r2:hover span{
+    position: relative;
+    display: inline-block;
+    animation:  flip 1.75s;
+    animation-delay: calc(.05s * var(--i) - 1s);
+}
+#r3:hover span{
+    position: relative;
+    display: inline-block;
+    animation:  flip .95s;
+    animation-delay: calc(.05s * var(--i) - .75s);
+}
+
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
+.active-text{
+    font-size: 1.2rem;
+    font-weight: bold;
+    animation: flip 1s;
+    animation-delay: .3s;
+}
+#dynamic-letter-story, #dynamic-letter-name{
+    width: fit-content;
+}
+
+
+/* gradient background*/
+.css-selector {
+    padding: 5% 0 5% 0;
+    background: linear-gradient(34deg, #5a01ba, #f86093, #fdb2cb, #c6cbfe);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}

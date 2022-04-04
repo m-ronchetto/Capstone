@@ -13,13 +13,16 @@
         <header>
             <h1>Write Change</h1>
             <nav>
-                <a id="step-1-header" href="#step-1">Step 1<span class="step-subtitle" id="step-1-subtitle">: Zip Code</span></a>
+                <a id="step-1-header" href="#step-1">Step 1<span class="step-subtitle" id="step-1-subtitle">: Location</span></a>
                 <a id="step-2-header" href="#step-2">Step 2<span class="step-subtitle-hidden" id="step-2-subtitle">: Name</span></a>
                 <a id="step-3-header" href="#step-3">Step 3<span class="step-subtitle-hidden" id="step-3-subtitle">: Prompt</span></a>
-                <a id="step-4-header" href="#step-4">Step 4<span class="step-subtitle-hidden" id="step-4-subtitle">: Share Your Story</span></a>
-                <a id="step-5-header" href="#step-5">Step 5<span class="step-subtitle-hidden" id="step-5-subtitle">: Call to Action</span></a>
+                <a id="step-4-header" href="#step-4">Step 4<span class="step-subtitle-hidden" id="step-4-subtitle">: Write</span></a>
+                <a id="step-5-header" href="#step-5">Step 5<span class="step-subtitle-hidden" id="step-5-subtitle">: Action</span></a>
             </nav>
         </header>
+        <div id="progress-bar">
+            <div id="percent-done"></div>
+        </div>
         <button id="close" type="button">Close Preview</button>
         <div id="container">
             <div id="left-column">
@@ -27,7 +30,7 @@
                 <div class="step" id="step-1-div">
                     <div class="content">
                         <h2>
-                            Let's <span class="highlighting">find your representatives.</span>
+                            1. Let's <span class="highlighting">find your representatives.</span>
                         </h2>
                         <div class="tip" id="tip-1">
                             <p>
@@ -47,16 +50,18 @@
                             <button class="back-inactive" type="button">
                                 Back to Topic Selection
                             </button>
-                            <button class="next" type="button">
-                                <a href="#step-2">Next: Name</a>
-                            </button>
+                            <a href="#step-2">
+                                <button class="next" type="button">
+                                    Next: Name
+                                </button>
+                            </a>
                         </div>
                     </div> 
                 </div>
                 <a class="anchor" id="step-2"></a>
                 <div class="step" id="step-2-div">
                     <div class="content">
-                        <h2>Let's get to know <span class="highlighting">you.</span></h2>
+                        <h2>2. Let's get to know <span class="highlighting">you.</span></h2>
                         <div class="tip" id="tip-2">
                             <p>
                                 Representatives value knowing who their letters are going to.
@@ -67,49 +72,85 @@
                             <input id="name-input" type="text">
                         </form>
                         <div class="button-cont">
-                            <button class="back" type="button">
-                            <a href="#step-1">Back</a>
-                            </button>
-                            <button class="next" type="button">
-                            <a href="#step-3">Next: Prompt</a>
-                            </button>
+                            <a href="#step-1">
+                                <button class="back" type="button">
+                                    Back
+                                </button>
+                            </a>
+                            <a href="#step-3">
+                                <button class="next" type="button">
+                                    Next: Prompt
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
                 <a class="anchor" id="step-3"></a>
                 <div class="step" id="step-3-div">
                     <div class="content">
-                        <h2>Choose a prompt to <span class="highlighting">guide your story.</span></h2>
+                        <h2>3. Choose a prompt to <span class="highlighting">guide your story.</span></h2>
                         <div class="tip" id="tip-3">
                             <p>
                                 Personalized letters are more likely to get an individualized response from representatives.
                             </p>
                         </div>
                         <p>
-                            Personal stories are what representatives remeber most from reading letters. Some representatives even print these stories as a reminder of who they are helping as they sign laws!
+                            Personal stories are what representatives remember most from reading letters. Some representatives even print these stories as a reminder of who they are helping as they sign laws!
                         </p>
                         <form>
-                            <input name="topic" id="you" type="radio">
-                            <label class="radios" for="you">Why is this topic important to you?</label>
-                            <input name="topic" id="others" type="radio">
-                            <label class="radios" for="others">How has air pollution affected your life?</label>
-                            <input name="topic" id="skip" type="radio">
-                            <label class="radios" for="skip">Skip to call to action</label>
+                            <div class="radio">
+                                <input name="topic" id="action-1" type="radio">
+                                <label for="action-1" id="r1">
+                                    <span style="--i:1">W</span><span style="--i:2">h</span><span style="--i:3">y</span> 
+                                    <span style="--i:4">i</span><span style="--i:5">s</span> 
+                                    <span style="--i:6">t</span><span style="--i:7">h</span><span style="--i:8">i</span><span style="--i:9">s</span> 
+                                    <span style="--i:10">t</span><span style="--i:11">o</span><span style="--i:12">p</span><span style="--i:13">i</span><span style="--i:14">c</span> 
+                                    <span style="--i:15">i</span><span style="--i:16">m</span><span style="--i:17">p</span><span style="--i:18">o</span><span style="--i:19">r</span><span style="--i:20">t</span><span style="--i:21">a</span><span style="--i:22">n</span><span style="--i:23">t</span> 
+                                    <span style="--i:24">t</span><span style="--i:25">o</span> 
+                                    <span style="--i:26">y</span><span style="--i:27">o</span><span style="--i:28">u</span><span style="--i:29">?</span>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <input name="topic" id="action-2" type="radio">
+                            <label class="radios" for="action-2" id="r2">
+                                <span style="--i:1">H</span><span style="--i:2">o</span><span style="--i:3">w</span> 
+                                <span style="--i:4">h</span><span style="--i:5">a</span><span style="--i:6">s</span> 
+                                <span style="--i:7">a</span><span style="--i:8">i</span><span style="--i:9">r</span> 
+                                <span style="--i:10">p</span><span style="--i:11">o</span><span style="--i:12">l</span><span style="--i:13">l</span><span style="--i:14">u</span><span style="--i:15">t</span><span style="--i:16">i</span><span style="--i:17">o</span><span style="--i:18">n</span> 
+                                <span style="--i:19">a</span><span style="--i:20">f</span><span style="--i:21">f</span><span style="--i:22">e</span><span style="--i:23">c</span><span style="--i:24">t</span><span style="--i:25">e</span><span style="--i:26">d</span> 
+                                <span style="--i:27">y</span><span style="--i:28">o</span><span style="--i:29">u</span><span style="--i:30">r</span> 
+                                <span style="--i:31">l</span><span style="--i:32">i</span><span style="--i:33">f</span><span style="--i:34">e</span><span style="--i:35">?</span>
+                            </label>
+                            </div>
+                            <div class="radio">
+                                <input name="topic" id="action-3" type="radio">
+                                <label for="action-3" id="r3">
+                                    <span style="--i:1">S</span><span style="--i:2">k</span><span style="--i:3">i</span><span style="--i:4">p</span> 
+                                    <span style="--i:5">t</span><span style="--i:6">o</span> 
+                                    <span style="--i:7">c</span><span style="--i:8">a</span><span style="--i:9">l</span><span style="--i:10">l</span> 
+                                    <span style="--i:11">t</span><span style="--i:12">o</span> 
+                                    <span style="--i:13">a</span><span style="--i:14">c</span><span style="--i:15">t</span><span style="--i:16">i</span><span style="--i:17">o</span><span style="--i:18">n</span><span style="--i:19">.</span>
+                                </label>
+                            </div>
                         </form>
                         <div class="button-cont">
-                            <button class="back" type="button">
-                            <a href="#step-2">Back</a>
-                            </button>
-                            <button class="next" type="button">
-                            <a href="#step-4">Next: Share Your Story</a>
-                            </button>
+                            <a href="#step-2">
+                                <button class="back" type="button">
+                                Back
+                                </button>
+                            </a>
+                            <a href="#step-4">
+                                <button class="next" type="button">
+                                Next: Share Your Story
+                                </button>
+                            </a>
                         </div>
                     </div> 
                 </div>
                 <a class="anchor" id="step-4"></a>
                 <div class="step" id="step-4-div">
                     <div class="content">
-                        <h2><span class="highlighting">Share a story</span> of how this topic is important to you.</h2>
+                        <h2>4. <span class="highlighting">Share a story</span> of how this topic is important to you.</h2>
                         <div class="tip" id="tip-4">
                             <p>
                                 You’re nearly done! This step will make your letter shine.
@@ -133,26 +174,29 @@
                             <textarea id="story-input" autocorrect="on" rows="4"></textarea>
                         </form>
                         <div class="button-cont">
-                            <button class="back" type="button">
-                            <a href="#step-3">Back</a>
-                            </button>
-                            <button class="next" type="button">
-                                <a href="#step-5">Next: Call to Action</a>
-                            </button>
+                            <a href="#step-3">
+                                <button class="back" type="button">
+                                Back
+                                </button>
+                            </a>
+                            <a href="#step-5">
+                                <button class="next" type="button">
+                                Next: Call to Action
+                                </button>
+                            </a>
                         </div>
                     </div>  
                 </div>
                 <a class="anchor" id="step-5"></a>
                 <div class="step" id="step-5-div">
                     <div class="content">
-                        <div id="mini-left">
-                            <h2>Choose a <span class="highlighting">call to action</span> for your representative</h2>
+                        <h2>5. Choose a <span class="highlighting">call to action</span> for your representative</h2>
                         <div class="tip" id="tip-5">
                             <p>
                                 Last step! Specific action items let your representative know how to best take action.
                             </p>
                         </div>
-                        <form>
+                        <form id="form-5">
                             <div class="checks">
                                 <input class="check" name="check" id="action-1" type="checkbox">
                                 <label for="action-1">Call on the EPA to enforce the Regional Haze Rule in St. Louis</label>
@@ -170,23 +214,24 @@
                                 <label for="action-4">Write your Own:</label>
                             </div>
                         </form>
+                        <div class="button-cont" id="button-cont-5">
+                            <a href="#step-4">
+                                <button class="back" type="button">
+                                Back
+                                </button>
+                            </a>
+                            <a>
+                                <button id="preview-button" class="next" type="button">
+                                    Preview Letter
+                                </button>
+                            </a>
                         </div>
-                        <div class="button-cont">
-                            <button class="back" type="button">
-                            <a href="#step-4">Back</a>
-                            </button>
-                            <button id="preview-button" class="next" type="button">
-                            <a href="preview.html">Preview Letter</a>
-                            </button>
-                        </div>
-                    </div> 
+                    </div>
                 </div>
             </div>
-            <div id="right-column">
-                <h2>Preview
-                </h2>
+            <div id="right-column" class="show">
                 <div id="dynamic-letter">
-                    <p>Hello <a id="dynamic-letter-rep" class="unselected" href="#step-1">(representative)</a>,</p>
+                    <p id="intro">Hello <a id="dynamic-letter-rep" class="unselected" href="#step-1">(representative)</a>,</p>
                     <p> My name is <a id="dynamic-letter-name" class="unselected" href="#step-2">(name)</a>, and I am a constituent from <a id="dynamic-letter-county" class="unselected" href="#step-1">(location)</a> county.</p>
                     <p>
                         <span class="selected">Air pollution</span> contributes to premature death, heart attacks, aggravated
@@ -203,23 +248,65 @@
                         These are the steps I would like you to commit to to take action.
                     </p>
                     <ul id="calls-to-action">
-                        <a class="hidden"  class="unselected" id="action-1-li" href="#step-5"><li>
+                        <a class="hidden unselected" id="action-1-li" href="#step-5"><li>
                             Call on the EPA to enforce the Regional Haze Rule in St. Louis.
                         </li></a>
-                        <a class="hidden"  class="unselected" id="action-2-li" href="#step-5"><li>
+                        <a class="hidden unselected" id="action-2-li" href="#step-5"><li>
                             Oppose H.B.2322, which ends vehicle emissions testing program for Franklin, Jefferson and St. Charles Counties.
                         </li></a>
-                        <a class="hidden"  class="unselected" id="action-3-li" href="#step-5"><li>
+                        <a class="hidden unselected" id="action-3-li" href="#step-5"><li>
                             Oppose S.B.1086, which prohibits political subdivisions from enacting ordinances more restrictive than the federal Clean Air Act.
                         </li></a>
-                        <a class="hidden"  class="unselected" id="action-4-li" href="#step-5"><li>
+                        <a class="hidden unselected" id="action-4-li" href="#step-5"><li>
                             Write your Own:
                         </li></a>
                         
                     </ul>
+                        <div id="end">
+                            <p>Sincerely,</p>
+                            <a href="#step-2" id="dynamic-letter-name">(name)</a>
+                        </div>
+                        <a href="#submit">
+                            <button id="submit-button" class="next" display="none" type="button">
+                            Submit
+                            </button>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
+        <a class="anchor" id="submit-anchor"></a>
+    <div id="submit" class="css-selector">
+        <div id="preview-letter">
+            <h2>Hooray! You did it!
+            </h2>
+            <p>Check your email for a confirmation and wait for your reply</p>
+            <div class="button-cont">
+                <button class="back-inactive" type="button">
+                    Share with Others
+                </button>
+                <a href="form.html">
+                    <button class="next" type="button">
+                    Write another Letter
+                    </button>
+                </a>
+            </div>
+        </div>
+        <div class="story">
+            <h2>Who You're helping:</h2>
+            <div class="flex">
+                <div>
+                    <p>
+                        Dorothy Collins, who lives in Pine Lawn, said she worries about her grandchildren’s health when they visit her because of the poor air quality. Her grandson suffers from asthma, and she is afraid to let him play outside.
+                    </p>
+                    <p>
+                        “It makes me feel bad because they have problems breathing when they are around, and I don't like to see them suffer,” Collins said.
+                    </p>
+                </div>
+                <img src="Images/air-pollution.jpg">
+            </div>
+        </div>
+    </div>
         <script src="script.js"></script>
     </body>
 </html>
