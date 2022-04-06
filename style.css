@@ -1,7 +1,7 @@
 /* general */
 header{
     display: flex;
-    padding: 5px 6% 5px 6%;
+    padding-top: 5px;
     position: sticky;
     top: 0;
     background-color: #bb0642;
@@ -12,6 +12,7 @@ h2, #mini-left>h2{
     font-size: 1.1rem;
 }
 h1{
+    padding-left: 7%;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.4rem;
     color: white;
@@ -19,6 +20,7 @@ h1{
 nav{
     display: flex;
     height: fit-content;
+    padding-right: 7%;
     margin-top: 16px;
     margin-left: auto;
     margin-right: 0;
@@ -305,7 +307,7 @@ button, #zip-submit{
 
 /* links */
 nav>a{
-    padding: 5px;
+    padding: 5px 5px 5px 15px;
     text-decoration: none;
     height:fit-content;
     color: #f86093;
@@ -434,8 +436,11 @@ label{
     #right-column {
       display: none;
     }
+    nav{
+        display: none;
+    }
     #left-column{
-        width: 95%;
+        width: 100%;
     }
     h2{
         line-height: 170%;
@@ -444,29 +449,24 @@ label{
         display: none;
     }
     html{
-        font-size: .8rem;
+        font-size: 1rem;
     }
   }
   
 
 /* Hover Text Animation */
-#r1:hover span{
+#step-1-header:hover span:nth-child(-n+5), #step-2-header:hover span:nth-child(-n+5), #step-3-header:hover span:nth-child(-n+5), #step-4-header:hover span:nth-child(-n+5), #step-5-header:hover span:nth-child(-n+5){
    position: relative;
    display: inline-block;
-   animation: flip 1.45s; 
-   animation-delay: calc(.05s * var(--i) - 1s);
+   animation: flip .5s; 
+   animation-delay: calc(.1s * var(--i) - .5s);
 }
-#r2:hover span{
+
+.current-step:hover span>span{
     position: relative;
     display: inline-block;
-    animation:  flip 1.75s;
-    animation-delay: calc(.05s * var(--i) - 1s);
-}
-#r3:hover span{
-    position: relative;
-    display: inline-block;
-    animation:  flip .95s;
-    animation-delay: calc(.05s * var(--i) - .75s);
+    animation: flip .9s; 
+    animation-delay: calc(.1s * var(--i) - 1s);
 }
 
 @keyframes flip {
@@ -474,6 +474,10 @@ label{
     transform: rotateY(360deg) 
   }
 }
+
+
+
+
 .active-text{
     font-size: 1.2rem;
     font-weight: bold;

@@ -13,16 +13,32 @@
         <header>
             <h1>Write Change</h1>
             <nav>
-                <a id="step-1-header" href="#step-1">Step 1<span class="step-subtitle" id="step-1-subtitle">: Location</span></a>
-                <a id="step-2-header" href="#step-2">Step 2<span class="step-subtitle-hidden" id="step-2-subtitle">: Name</span></a>
-                <a id="step-3-header" href="#step-3">Step 3<span class="step-subtitle-hidden" id="step-3-subtitle">: Prompt</span></a>
-                <a id="step-4-header" href="#step-4">Step 4<span class="step-subtitle-hidden" id="step-4-subtitle">: Write</span></a>
-                <a id="step-5-header" href="#step-5">Step 5<span class="step-subtitle-hidden" id="step-5-subtitle">: Action</span></a>
+                <a id="step-1-header" href="#step-1">
+                    <span style="--i:1">S</span><span style="--i:2">t</span><span style="--i:3">e</span><span style="--i:4">p</span> <span style="--i:5">1</span>
+                    <span class="step-subtitle" id="step-1-subtitle">
+                        <span style="--i:6">:</span> <span style="--i:7">L</span><span style="--i:8">o</span><span style="--i:9">c</span><span style="--i:10">a</span><span style="--i:11">t</span><span style="--i:12">i</span><span style="--i:13">o</span><span style="--i:14">n</span></span></a>
+                <a id="step-2-header" href="#step-2">
+                    <span style="--i:1">S</span><span style="--i:2">t</span><span style="--i:3">e</span><span style="--i:4">p</span> <span style="--i:5">2</span>
+                    <span class="step-subtitle-hidden" id="step-2-subtitle">
+                        <span style="--i:6">:</span> <span style="--i:7">N</span><span style="--i:8">a</span><span style="--i:9">m</span><span style="--i:10">e</span></span></a>
+                <a id="step-3-header" href="#step-3">
+                    <span style="--i:1">S</span><span style="--i:2">t</span><span style="--i:3">e</span><span style="--i:4">p</span> <span style="--i:5">3</span>
+                    <span class="step-subtitle-hidden" id="step-3-subtitle">
+                        <span style="--i:6">:</span> <span style="--i:7">P</span><span style="--i:8">r</span><span style="--i:9">o</span><span style="--i:10">m</span><span style="--i:11">p</span><span style="--i:12">t</span></span></a>
+                <a id="step-4-header" href="#step-4">
+                    <span style="--i:1">S</span><span style="--i:2">t</span><span style="--i:3">e</span><span style="--i:4">p</span> <span style="--i:5">4</span>
+                    <span class="step-subtitle-hidden" id="step-4-subtitle">
+                        <span style="--i:6">:</span> <span style="--i:7">W</span><span style="--i:8">r</span><span style="--i:9">i</span><span style="--i:10">t</span><span style="--i:11">e</span></span></a>
+                <a id="step-5-header" href="#step-5">
+                    <span style="--i:1">S</span><span style="--i:2">t</span><span style="--i:3">e</span><span style="--i:4">p</span> <span style="--i:5">5</span>
+                    <span class="step-subtitle-hidden" id="step-5-subtitle">
+                        <span style="--i:6">:</span> <span style="--i:7">A</span><span style="--i:8">c</span><span style="--i:9">t</span><span style="--i:10">i</span><span style="--i:11">o</span><span style="--i:12">n</span></span></a>
             </nav>
+            <div id="progress-bar">
+                <div id="percent-done"></div>
+            </div>
         </header>
-        <div id="progress-bar">
-            <div id="percent-done"></div>
-        </div>
+        
         <button id="close" type="button">Close Preview</button>
         <div id="container">
             <div id="left-column">
@@ -43,7 +59,7 @@
                             <input id="zip-submit" type="submit" value="Submit">
                         </form>
                         <div id="error" class="tip hidden"><p></p></div>
-                        <img src="images/Frame 1.png">
+                        <img src="images/Frame-1.png">
                         <a class="anchor" id="select-representatives"></a>
                         <form id="representative-form"></form>
                         <div class="button-cont">
@@ -100,36 +116,20 @@
                         <form>
                             <div class="radio">
                                 <input name="topic" id="action-1" type="radio">
-                                <label for="action-1" id="r1">
-                                    <span style="--i:1">W</span><span style="--i:2">h</span><span style="--i:3">y</span> 
-                                    <span style="--i:4">i</span><span style="--i:5">s</span> 
-                                    <span style="--i:6">t</span><span style="--i:7">h</span><span style="--i:8">i</span><span style="--i:9">s</span> 
-                                    <span style="--i:10">t</span><span style="--i:11">o</span><span style="--i:12">p</span><span style="--i:13">i</span><span style="--i:14">c</span> 
-                                    <span style="--i:15">i</span><span style="--i:16">m</span><span style="--i:17">p</span><span style="--i:18">o</span><span style="--i:19">r</span><span style="--i:20">t</span><span style="--i:21">a</span><span style="--i:22">n</span><span style="--i:23">t</span> 
-                                    <span style="--i:24">t</span><span style="--i:25">o</span> 
-                                    <span style="--i:26">y</span><span style="--i:27">o</span><span style="--i:28">u</span><span style="--i:29">?</span>
+                                <label for="action-1">
+                                    Why is this topic important to you?
                                 </label>
                             </div>
                             <div class="radio">
                                 <input name="topic" id="action-2" type="radio">
-                            <label class="radios" for="action-2" id="r2">
-                                <span style="--i:1">H</span><span style="--i:2">o</span><span style="--i:3">w</span> 
-                                <span style="--i:4">h</span><span style="--i:5">a</span><span style="--i:6">s</span> 
-                                <span style="--i:7">a</span><span style="--i:8">i</span><span style="--i:9">r</span> 
-                                <span style="--i:10">p</span><span style="--i:11">o</span><span style="--i:12">l</span><span style="--i:13">l</span><span style="--i:14">u</span><span style="--i:15">t</span><span style="--i:16">i</span><span style="--i:17">o</span><span style="--i:18">n</span> 
-                                <span style="--i:19">a</span><span style="--i:20">f</span><span style="--i:21">f</span><span style="--i:22">e</span><span style="--i:23">c</span><span style="--i:24">t</span><span style="--i:25">e</span><span style="--i:26">d</span> 
-                                <span style="--i:27">y</span><span style="--i:28">o</span><span style="--i:29">u</span><span style="--i:30">r</span> 
-                                <span style="--i:31">l</span><span style="--i:32">i</span><span style="--i:33">f</span><span style="--i:34">e</span><span style="--i:35">?</span>
+                                <label class="radios" for="action-2">
+                                How has air pollution affected your life?
                             </label>
                             </div>
                             <div class="radio">
                                 <input name="topic" id="action-3" type="radio">
-                                <label for="action-3" id="r3">
-                                    <span style="--i:1">S</span><span style="--i:2">k</span><span style="--i:3">i</span><span style="--i:4">p</span> 
-                                    <span style="--i:5">t</span><span style="--i:6">o</span> 
-                                    <span style="--i:7">c</span><span style="--i:8">a</span><span style="--i:9">l</span><span style="--i:10">l</span> 
-                                    <span style="--i:11">t</span><span style="--i:12">o</span> 
-                                    <span style="--i:13">a</span><span style="--i:14">c</span><span style="--i:15">t</span><span style="--i:16">i</span><span style="--i:17">o</span><span style="--i:18">n</span><span style="--i:19">.</span>
+                                <label for="action-3">
+                                Skip to call to action
                                 </label>
                             </div>
                         </form>
