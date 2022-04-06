@@ -1,10 +1,19 @@
 /* general */
 header{
-    display: flex;
+    display: block;
+    padding: 0;
+    margin: 0;
     padding-top: 5px;
     position: sticky;
     top: 0;
     background-color: #bb0642;
+}
+#main-header-content{
+    background-color: #bb0642;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
 }
 h2, #mini-left>h2{
     margin: 0;
@@ -25,6 +34,7 @@ nav{
     margin-left: auto;
     margin-right: 0;
     width: fit-content;
+    margin-bottom: 0;
 }
 img{
     padding-top: 20px;
@@ -58,7 +68,7 @@ a{
     text-decoration: none;
 }
 .step{
-    margin: 50px 10% 500px 0;
+    margin: 50px 10% 100% 0;
 }
 #step-5-div{
     margin: 50px 10% 120px 0;
@@ -72,14 +82,10 @@ a{
     background-color: #c6cbfe;
     height: 3%;
     width: 100%;
-    position: fixed;
-    top: 8%;
 }
 #percent-done{
-    height: 3%;
+    height: 100%;
     width: 0%;
-    position: fixed;
-    top: 8%;
     background-color: #5a01ba;
     transition: width .5s;
     z-index: 1;
@@ -442,14 +448,18 @@ label{
     #left-column{
         width: 100%;
     }
+    h1{
+        font-size: 2rem;
+    }
     h2{
         line-height: 170%;
+        font-size: 1.5rem;
     }
     #close{
         display: none;
     }
     html{
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
   }
   
