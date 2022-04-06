@@ -478,6 +478,9 @@ label{
         width: 95%;
         margin: 0;
     }
+    .flex>img{
+        height: 400px;
+    }
     .story{
         margin-top: 40px;
     }
