@@ -347,6 +347,12 @@ nav>a:hover>.step-subtitle, nav>a:hover{
 #submit-anchor{
     height: 50%;
 }
+.anchor{
+    display: block;
+    position: relative;
+    top: 2.5%;
+    visibility: hidden;
+}
 .hide-left{
     width: 10% !important;
     visibility: hidden;
@@ -483,6 +489,9 @@ label{
     }
     .story{
         margin-top: 40px;
+    }
+    #submit-anchor{
+        height: 10%;
     }
   }
   
