@@ -461,6 +461,12 @@ label{
         width: 100%;
         justify-content: center;
     }
+    .step{
+        margin: 5% 10% 180% 0;
+    }
+    .anchor{
+        top: -10vh;
+    }
     h1{
         font-size: 2rem;
     }
@@ -486,9 +492,6 @@ label{
     }
     .story{
         margin-top: 40px;
-    }
-    #submit-anchor{
-        height: 10%;
     }
   }
   
