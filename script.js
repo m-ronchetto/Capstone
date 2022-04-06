@@ -172,14 +172,21 @@ document.getElementById("preview-button").addEventListener("click", function(){
     let left = document.getElementById("left-column");
     let submit = document.getElementById("submit-button");
     //make full screen
-    sidebar.classList.remove("hide");
-    sidebar.classList.remove("show");
-    sidebar.classList.add("full-preview");
-    submit.style.display = "block";
-    sidebar.style.visibility = "visible";
-    document.getElementById("close").innerText = "Minimimze Preview";
-    left.classList.remove("wide");
-    left.classList.add("hide-left"); 
+    if(window.matchMedia("(max-width: 992px)").matches){
+        //
+        sidebar.scrollIntoView({behavior: 'smooth'});
+        submit.style.display = "block";
+    }
+    else{
+        sidebar.classList.remove("hide");
+        sidebar.classList.remove("show");
+        sidebar.classList.add("full-preview");
+        submit.style.display = "block";
+        sidebar.style.visibility = "visible";
+        left.classList.remove("wide");
+        left.classList.add("hide-left"); 
+        document.getElementById("close").innerText = "Minimimze Preview";
+    }
 });
 
 document.getElementById("submit-button").addEventListener("click", function(){
