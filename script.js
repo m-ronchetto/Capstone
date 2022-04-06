@@ -328,3 +328,7 @@ Array.from(document.getElementsByClassName("highlighting")).forEach((el, index, 
     document.getElementById("tip-"+(index+1)).classList.remove("visible");
 }));
 
+//displaying submit page
+document.getElementById("submit-button").addEventListener("click", function(){
+    document.getElementById("submit").classList.remove("hidden");
+});

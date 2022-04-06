@@ -181,7 +181,7 @@ form{
     display:none;
 }
 .hidden{
-    display: none;
+    display: none !important;
 }
 .content>p{
     width: 85%;
@@ -439,14 +439,24 @@ label{
 
 /* mobile compatibility */
 @media screen and (max-width: 992px) {
+    #container{
+        flex-direction: column;
+    }
     #right-column {
-      display: none;
+      min-width: 95%;
+      width: 100%;
+      position: relative;
+      margin-top: 2%;
+    }
+    .show{
+        width: 100%;
     }
     nav{
         display: none;
     }
     #left-column{
         width: 100%;
+        justify-content: center;
     }
     h1{
         font-size: 2rem;
