@@ -344,13 +344,10 @@ nav>a:hover>.step-subtitle, nav>a:hover{
 .selected:hover{
     color: #fdb2cb;
 }
-#submit-anchor{
-    height: 50%;
-}
 .anchor{
     display: block;
     position: relative;
-    top: 2.5%;
+    top: -4.5%;
     visibility: hidden;
 }
 .hide-left{
