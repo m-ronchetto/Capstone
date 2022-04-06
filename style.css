@@ -471,6 +471,16 @@ label{
     html{
         font-size: 1.2rem;
     }
+    .flex{
+        flex-direction: column;
+    }
+    .flex>div, .flex>img{
+        width: 95%;
+        margin: 0;
+    }
+    .story{
+        margin-top: 40px;
+    }
   }
   
 
