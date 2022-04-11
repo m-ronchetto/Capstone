@@ -7,6 +7,7 @@ header{
     position: sticky;
     top: 0;
     background-color: #bb0642;
+    z-index: 2;
 }
 #main-header-content{
     background-color: #bb0642;
@@ -20,11 +21,13 @@ h2, #mini-left>h2{
     line-height: 170%;
     font-size: 1.1rem;
 }
-h1{
+.title{
     padding-left: 7%;
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.4rem;
     color: white;
+}
+h1{
+    font-size: 1.4rem;
 }
 nav{
     display: flex;
@@ -66,6 +69,7 @@ html{
 }
 a{
     text-decoration: none;
+    width: fit-content;
 }
 .step{
     margin: 50px 10% 100% 0;
@@ -154,6 +158,7 @@ form{
     color: #5a01ba;
     opacity: 0;
     transition: opacity 1s;
+    font-family: "Roboto-Mono", monospace;
 }
 #tip-5{
     margin-top: 15px;
@@ -467,18 +472,21 @@ label{
     .anchor{
         top: -10vh;
     }
+    .title{
+        font-size: 1rem;
+    }
     h1{
-        font-size: 2rem;
+        font-size: 1rem;
     }
     h2{
         line-height: 170%;
-        font-size: 1.5rem;
+        font-size: 3.5rem;
     }
     #close{
         display: none;
     }
     html{
-        font-size: 1.2rem;
+        font-size: 2.2rem;
     }
     .flex{
         flex-direction: column;
@@ -556,4 +564,98 @@ label{
     0%{background-position:0% 51%}
     50%{background-position:100% 50%}
     100%{background-position:0% 51%}
+}
+
+/* homepage style */
+.section{
+    margin: 5%;
+    padding: 50px 75px 95px 75px;
+    background-color: white;
+    border-radius: 2px;
+    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
+}
+#big-cta{
+    padding: 30px;
+    font-size: 1.8rem;
+    border-radius: 45px;
+    margin-bottom: 30px;
+}
+#hero{
+    font-family: 'Roboto Mono', monospace;
+    width: 50%;
+    margin-bottom: 30px;
+}
+#home-container{
+    display: flex;
+    flex-direction: column;
+}
+.section>h2, .section-topic>h2{
+    font-size: 2rem;
+}
+/* .carousel-control-previous, .carousel-control-next{
+    border-bottom: 0;
+    font-size: 40px;
+    color: #2E3136;
+} */
+/* .carousel { 
+    display: flex; 
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden; 
+}
+.carousel-entry { 
+    display: block; 
+    list-style: none; 
+}
+.arrows.prev, .arrows.next {
+    display: flex; font-size: 32px;
+    align-items: center; justify-content: center;
+    color: #333;
+    border: none;
+    width: 44px; height: 44px;
+    background-color: #bb0642;
+  }
+  .arrows.prev {
+    position: absolute; left: 0; top: 80px;
+  }
+  .arrows.next {
+    position: absolute; right: 0; top: 80px;
+  } */
+
+/* topic page style */
+#air-pollution-choose{
+    background-image: url("images/air-pollution.jpg");
+    padding-right: 50%;
+    color: white;
+}
+#safe-water-choose{
+    background-image: url('images/safe-water.jpg');
+    padding-right: 50%;
+    color: white;
+}
+#mold-choose{
+    background-image: url('images/mold.jpg');
+    padding-right: 50%;
+    color: white;
+}
+#food-access-choose{
+    background-image: url('images/food-access.jpg');
+    padding-right: 50%;
+    color: white;
+    margin-bottom: 5%;
+}
+#fixed-header{
+    margin: 5% 5% 0 5%;
+    padding: 25px 55px 25px 55px;
+    background-color: white;
+    border-radius: 2px;
+    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
+    font-size: 1.5rem;
+}
+.section-topic{
+    margin: 0 5% 5% 5%;
+    padding: 65px 55px 95px 55px;
+    background-color: white;
+    border-radius: 2px;
+    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
 }
