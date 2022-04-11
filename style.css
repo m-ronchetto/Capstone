@@ -466,6 +466,14 @@ label{
         width: 100%;
         justify-content: center;
     }
+    .button-cont, #button-cont-5{
+        margin-top: 40px;
+    }
+    button{
+        padding: 20px 25px 20px 25px;
+        font-size: 1.3rem;
+        border-radius: 35px;
+    }
     .step{
         margin: 5% 10% 180% 0;
     }
@@ -478,7 +486,7 @@ label{
     h1{
         font-size: 1rem;
     }
-    h2{
+    h2, .content>h2{
         line-height: 170%;
         font-size: 3.5rem;
     }
@@ -486,7 +494,7 @@ label{
         display: none;
     }
     html{
-        font-size: 2.2rem;
+        font-size: 1.3rem;
     }
     .flex{
         flex-direction: column;
@@ -500,6 +508,12 @@ label{
     }
     .story{
         margin-top: 40px;
+    }
+    .content{
+        font-size: 1.5rem;
+    }
+    .content>p{
+        font-size: 1.2rem;
     }
   }
   
@@ -564,31 +578,4 @@ label{
     0%{background-position:0% 51%}
     50%{background-position:100% 50%}
     100%{background-position:0% 51%}
-}
-
-/* homepage style */
-.section{
-    margin: 5%;
-    padding: 50px 75px 95px 75px;
-    background-color: white;
-    border-radius: 2px;
-    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
-}
-#big-cta{
-    padding: 30px;
-    font-size: 1.8rem;
-    border-radius: 45px;
-    margin-bottom: 30px;
-}
-#hero{
-    font-family: 'Roboto Mono', monospace;
-    width: 50%;
-    margin-bottom: 30px;
-}
-#home-container{
-    display: flex;
-    flex-direction: column;
-}
-.section>h2, .topic-text>h2{
-    font-size: 2rem;
 }
