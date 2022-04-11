@@ -494,7 +494,7 @@ label{
         display: none;
     }
     html{
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
     .flex{
         flex-direction: column;
@@ -510,10 +510,13 @@ label{
         margin-top: 40px;
     }
     .content{
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
     .content>p{
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+    .checks, .radio{
+        font-size: 1.5rem;
     }
   }
   
