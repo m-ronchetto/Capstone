@@ -22,20 +22,17 @@
   }
   
   .carousel-inner > .active,
-  .carousel-inner > .next {
+  .carousel-inner > .nextcar {
     display: block;
   }
   
-  .carousel-inner > .next {
+  .carousel-inner > .nextcar {
     position: absolute;
     top: 0;
     width: 100%;
   }
 
-  .to-left .next{
-      background-color: red;
-  }
-  
+
   .carousel-inner > .to-left {
     animation-name: left;
   }

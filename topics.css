@@ -1,0 +1,79 @@
+#air-pollution-choose{
+    background-image: url("images/air-pollution.jpg");
+    color: white;
+    background-size: cover;
+    margin-top: 10%;
+}
+#safe-water-choose{
+    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/safe-water.jpg');
+    color: white;
+    background-size: cover;
+}
+#mold-choose{
+    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/mold.jpg');
+    color: white;
+    background-size: cover;
+}
+#food-access-choose{
+    background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/food-access.jpg');
+    color: white;
+    background-size: cover;
+    margin-bottom: 5%;
+}
+#fixed-header{
+    /* margin: 5% 5% 0 5%; */
+    padding: 25px 55px 25px 55px;
+    background-color: white;
+    border-radius: 2px;
+    position: fixed;
+    top: 15%;
+    left: 5%;
+    right: 5%;
+    z-index: 2;
+    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
+    font-size: 1.5rem;
+}
+.section-topic{
+    margin: 0 5% 5% 5%;
+    padding: 65px 55px 125px 55px;
+    background-color: white;
+    border-radius: 2px;
+    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
+    display: flex;
+    justify-content: space-between;
+}
+.topic-text{
+    width: 50%;
+}
+.topic-text>p{
+    margin-bottom: 30px;
+}
+.elevator{
+    width: 10%;
+}
+.topic-anchor{
+    display: block;
+    position: relative;
+    top: -4.5vh;
+    visibility: hidden;
+}
+.arrow {
+    position: absolute;
+    left: 90%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyNiAyMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+QXJyb3c8L3RpdGxlPjxwYXRoIGQ9Ik0yNS42IDEwLjk3NGwtOC41MyA4LjYyYTEuMzYgMS4zNiAwIDAgMS0xLjkzNS4wMDMgMS4zODcgMS4zODcgMCAwIDEtLjAwMi0xLjk1bDYuMjAxLTYuMjY4SDEuMzY4QTEuMzc0IDEuMzc0IDAgMCAxIDAgMTBjMC0uNzYyLjYxMy0xLjM4IDEuMzY4LTEuMzhoMTkuOTY2bC02LjItNi4yNjdhMS4zODcgMS4zODcgMCAwIDEgLjAwMS0xLjk1IDEuMzYgMS4zNiAwIDAgMSAxLjkzNi4wMDJsOC41MyA4LjYyMWMuNTMyLjUzOC41MzIgMS40MSAwIDEuOTQ4IiBmaWxsPSIjRkZGRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=") center center no-repeat;
+    background-size: 26px 20px;
+    opacity: 0.6;
+    transform: translateY(-50%);
+}
+.arrow.up{
+    transform: rotate(-90deg);
+    top: 35%;
+
+}
+.arrow.down{
+    transform: rotate(90deg);
+    top: 50%;
+}

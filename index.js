@@ -41,9 +41,9 @@ function hideItem(direction) {
 }
 
 function showItem(direction) {
-	items[currentItem].classList.add('next', direction);
+	items[currentItem].classList.add('nextcar', direction);
 	items[currentItem].addEventListener('animationend', function() {
-		this.classList.remove('next', direction);
+		this.classList.remove('nextcar', direction);
 		this.classList.add('active');
 		isEnabled = true;
 	});

@@ -7,6 +7,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.typekit.net/zmj0ief.css">
         <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="topics.css"/>
     </head>
     <body>
         <header>
@@ -28,45 +29,73 @@
         </header>
         <h2 id="fixed-header">Choose a Topic:</h2>
         <div id="home-container">
+            <a id="air-pollution-anchor" class="topic-anchor"></a>
             <div id="air-pollution-choose" class="section-topic">
-                <h2>
-                    Air Pollution
-                </h2>
-                <p>
-                    Air pollution contributes to premature death, heart attacks, aggravated asthma, and reduced lung function. St. Louis has been in violation of the federal health-based air standard for ozone since 1979.
-                </p>
-                <a href="form.html">
-                    <button class="next" type="button">
-                        Start Writing!
-                    </button>
-                </a>
+                <div class="topic-text">
+                    <h2>
+                        Air Pollution
+                    </h2>
+                    <p>
+                        Air pollution contributes to premature death, heart attacks, aggravated asthma, and reduced lung function. St. Louis has been in violation of the federal health-based air standard for ozone since 1979.
+                    </p>
+                    <a href="form.html">
+                        <button class="next" type="button">
+                            Start Writing!
+                        </button>
+                    </a>
+                </div>
+                <div class="elevator">
+                    <a href="#food-access-anchor"><div class="arrow up"></div></a>
+                    <a href="#safe-water-anchor"><div class="arrow down"></div></a>
+                </div>
             </div>
+            <a id="safe-water-anchor" class="topic-anchor"></a>
             <div id="safe-water-choose" class="section-topic">
-                <h2>
-                    Safe Water
-                </h2>
-                <p>
-                    There is no safe level of exposure to lead. Lead poisoning has been occurring much longer and the rates continue to be higher in the northern section of the city and southern along highway 55.
-                </p>
-                <button class="next">Start Writing!</button>
+                <div class="topic-text">
+                    <h2>
+                        Safe Water
+                    </h2>
+                    <p>
+                        There is no safe level of exposure to lead. Lead poisoning has been occurring much longer and the rates continue to be higher in the northern section of the city and southern along highway 55.
+                    </p>
+                    <button class="next">Start Writing!</button>
+                </div>
+                <div class="elevator">
+                    <a href="#air-pollution-anchor"><div class="arrow up"></div></a>
+                    <a href="#mold-anchor"><div class="arrow down"></div></a>
+                </div>
             </div>
+            <a id="mold-anchor" class="topic-anchor"></a>
             <div id="mold-choose" class="section-topic">
-                <h2>
-                    Mold
-                </h2>
-                <p>
-                    Mold is expensive to remove, there are no legal standards for mold exposure, and landlords often refuse to do anything about it. Addressing mold is out of reach for many who are most affected by it.
-               </p>
-                <button class="next">Start Writing!</button>
+                <div class="topic-text">
+                    <h2>
+                        Mold
+                    </h2>
+                    <p>
+                        Mold is expensive to remove, there are no legal standards for mold exposure, and landlords often refuse to do anything about it. Addressing mold is out of reach for many who are most affected by it.
+                   </p>
+                    <button class="next">Start Writing!</button>
+                </div>
+                <div class="elevaton">
+                    <a href="#safe-water-anchor"><div class="arrow up"></div></a>
+                    <a href="#food-access-anchor"><div class="arrow down"></div></a>
+                </div>
             </div>
+            <a id="food-access-anchor" class="topic-anchor"></a>
             <div id="food-access-choose" class="section-topic">
-                <h2>
-                    Food Access
-                </h2>
-                <p>
-                    Access to healthy food is associated with lower risk for obesity and other diet-related chronic diseases. Access to a car allows people to leave the food desert and shop at supermarkets and large grocery stores outside of their neighborhoods.
-               </p>
-                <button class="next">Start Writing!</button>
+                <div class="topic-text">
+                    <h2>
+                        Food Access
+                    </h2>
+                    <p>
+                        Access to healthy food is associated with lower risk for obesity and other diet-related chronic diseases. Access to a car allows people to leave the food desert and shop at supermarkets and large grocery stores outside of their neighborhoods.
+                   </p>
+                    <button class="next">Start Writing!</button>
+                </div>
+                <div class="elevator">
+                    <a href="#mold-anchor"><div class="arrow up"></div></a>
+                    <a href="#air-pollution-anchor"><div class="arrow down"></div></a>
+                </div>
             </div>
         </div>
     </body>
