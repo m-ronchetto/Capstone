@@ -2,7 +2,6 @@
     background-image: url("images/air-pollution.jpg");
     color: white;
     background-size: cover;
-    margin-top: 10%;
 }
 #safe-water-choose{
     background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/safe-water.jpg');
@@ -18,7 +17,6 @@
     background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/food-access.jpg');
     color: white;
     background-size: cover;
-    margin-bottom: 5%;
 }
 #fixed-header{
     padding: 25px 5% 25px 5%;
