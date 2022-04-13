@@ -329,7 +329,7 @@ nav>a{
 nav>a:hover>.step-subtitle, nav>a:hover{
     color:white;
 }
-.current-step, .step-subtitle{
+.current-step, .step-subtitle, .current{
     color: white;
 }
 #dynamic-letter>p>a:visited, #dynamic-letter>p>a,#dynamic-letter>a, #calls-to-action>a{
@@ -417,6 +417,9 @@ nav>a:hover>.step-subtitle, nav>a:hover{
 label{
     margin-right:16px;
     margin-left: 5px;
+}
+input{
+    font-size: 1.1rem;
 }
 .checks>label,.radio>label, input[type="checkbox"], input[type="radio"]{
     cursor: pointer;

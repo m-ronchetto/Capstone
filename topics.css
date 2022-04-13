@@ -21,32 +21,29 @@
     margin-bottom: 5%;
 }
 #fixed-header{
-    /* margin: 5% 5% 0 5%; */
-    padding: 25px 55px 25px 55px;
+    padding: 25px 5% 25px 5%;
     background-color: white;
-    border-radius: 2px;
-    position: fixed;
-    top: 15%;
-    left: 5%;
-    right: 5%;
-    z-index: 2;
     filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
     font-size: 1.5rem;
 }
 .section-topic{
-    margin: 0 5% 5% 5%;
-    padding: 65px 55px 125px 55px;
+    margin-bottom: 5%;
+    padding: 10% 5% 5% 5%;
     background-color: white;
     border-radius: 2px;
     filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
     display: flex;
     justify-content: space-between;
+    height: 70vh;
 }
 .topic-text{
-    width: 50%;
+    width: 40%;
 }
 .topic-text>p{
     margin-bottom: 30px;
+}
+.topic-text>h2{
+    font-size: 2rem;
 }
 .elevator{
     width: 10%;
@@ -54,7 +51,7 @@
 .topic-anchor{
     display: block;
     position: relative;
-    top: -4.5vh;
+    top: -8vh;
     visibility: hidden;
 }
 .arrow {
@@ -71,7 +68,6 @@
 .arrow.up{
     transform: rotate(-90deg);
     top: 35%;
-
 }
 .arrow.down{
     transform: rotate(90deg);
