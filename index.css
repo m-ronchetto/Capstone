@@ -24,6 +24,12 @@
   margin-right: 50px;
   height: fit-content;
 }
+ul>a{
+  font-size: .9rem;
+}
+ul>a:hover{
+  color: #c6cbfe;
+}
 li>p{
   font-size: .9rem;
   font-style: italic;
@@ -324,8 +330,14 @@ li>p{
   .column-text{
     flex-direction: column;
   }
-  #right-about{
+  #right-about, #left-about{
     width: 80%;
+  }
+  #right-about>div>p{
+    margin: 0;
+  }
+  h3{
+    margin-bottom: 0;
   }
   img{
     justify-content: center;
