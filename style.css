@@ -530,9 +530,10 @@ input{
     }
     .content>p{
         font-size: 1.5rem;
+        width: 100%;
     }
     .content>h2{
-        font-size: 2rem;
+        font-size: 2.3rem;
     }
     .checks, .radio{
         font-size: 1.5rem;
@@ -546,6 +547,9 @@ input{
         font-size: 1.8rem;
         margin-top: 30px;
         height: 50%;
+    }
+    #step-5-div{
+        margin: 50px 10% 25vh 0;
     }
   }
   
