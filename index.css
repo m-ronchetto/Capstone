@@ -71,7 +71,7 @@ li>p{
   margin-bottom: 30px;
 }
 #about{
-  height: 55vh;
+  height: 60vh;
 }
 #about>p{
   width: 75%;
@@ -325,7 +325,7 @@ li>p{
     width: 70%;
   }
   #about{
-    height: 85vh;
+    height: 90vh;
   }
   .column-text{
     flex-direction: column;
