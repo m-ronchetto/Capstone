@@ -5,6 +5,9 @@
   border-radius: 2px;
   filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
 }
+#how{
+  height: 60vh;
+}
 .section-wide{
   margin: 0 0 5% 0;
   height: 75vh;
@@ -20,6 +23,22 @@
   margin-left: 0;
   margin-right: 50px;
   height: fit-content;
+}
+li>p{
+  font-size: .9rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+.how-div{
+  display: flex;
+  margin-bottom: 20px;
+}
+.how-div>img{
+  width: 3.5%;
+  height: fit-content;
+  margin-right: 4%;
+  padding-top: 0;
+  object-fit: cover;
 }
 #big-cta{
   padding: 20px 30px;
@@ -45,13 +64,33 @@
   margin: auto;
   margin-bottom: 30px;
 }
-#about, #how{
-  height: 50vh;
+#about{
+  height: 55vh;
+}
+#about>p{
+  width: 75%;
+  font-size: .9rem;
+}
+.column-text{
+  display: flex;
+}
+#left-about{
+  width: 30%;
+  margin-right: 5%;
+}
+#right-about{
+  width: 40%;
 }
 .short-anchor{
   display: block;
   position: relative;
   top: 8vh;
+  visibility: hidden;
+}
+.how-anchor{
+  display: block;
+  position: relative;
+  top: -4vh;
   visibility: hidden;
 }
 .index-anchor{
@@ -242,6 +281,7 @@
       width: 60px;
       height: 60px;
       background-size: 56px 50px;
+      opacity: 1;
   }
   .carousel-control.left{
     left: 3vh;
@@ -252,7 +292,7 @@
     left: auto;
   }
   .carousel-control{
-    top: 30vh;
+    top: 28vh;
   }
   .flex>div{
     width: 100%;
@@ -269,6 +309,22 @@
     font-size: 2.8rem;
     border-radius: 65px;
     margin-bottom: 50px;
+  }
+  .how-div>img{
+    width: 10%;
+    margin-right: 10%;
+  }
+  li>p{
+    width: 70%;
+  }
+  #about{
+    height: 80vh;
+  }
+  .column-text{
+    flex-direction: column;
+  }
+  #right-about{
+    width: 80%;
   }
   img{
     justify-content: center;
