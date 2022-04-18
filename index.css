@@ -325,13 +325,16 @@ li>p{
     width: 70%;
   }
   #about{
-    height: 90vh;
+    height: 80vh;
+  }
+  #about>p{
+    width: 90%;
   }
   .column-text{
     flex-direction: column;
   }
   #right-about, #left-about{
-    width: 80%;
+    width: 90%;
   }
   #right-about>div>p{
     margin: 0;
