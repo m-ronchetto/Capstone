@@ -493,6 +493,10 @@ input{
         margin-top: 50px;
         margin-bottom: 50px;
     }
+    input[type="checkbox"], input[type="radio"]{
+        width: 45px;
+        height: 45px;
+    }
     .step{
         margin: 5% 10% 180% 0;
     }
@@ -531,6 +535,7 @@ input{
     .content>p{
         font-size: 1.5rem;
         width: 100%;
+        margin-bottom: 50px;
     }
     .content>h2{
         font-size: 2.3rem;
