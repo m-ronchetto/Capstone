@@ -9,6 +9,9 @@ header{
     background-color: #bb0642;
     z-index: 2;
 }
+#input-div{
+    display: flex;
+}
 #main-header-content{
     background-color: #bb0642;
     margin: 0;
@@ -487,8 +490,8 @@ input{
     }
     button, #zip-submit{
         width: fit-content;
-        padding: 30px 40px;
-        font-size: 2rem;
+        padding: 27px 37px;
+        font-size: 1.7rem;
         border-radius: 65px;
         margin-top: 50px;
         margin-bottom: 50px;
@@ -549,7 +552,6 @@ input{
     input[type="text"]{
         font-size: 1.8rem;
         width: 50%;
-        margin-top: 30px;
     }
     textarea{
         font-size: 1.8rem;
