@@ -24,16 +24,22 @@ h2, #mini-left>h2{
 .title{
     padding-left: 7%;
     font-family: 'Roboto Mono', monospace;
+    text-align: center;
     color: white;
 }
-h1{
+.title>h1{
+    margin-bottom: 0;
     font-size: 1.4rem;
+}
+.title>h2{
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 nav{
     display: flex;
     height: fit-content;
     padding-right: 7%;
-    margin-top: 16px;
+    margin-top: 22px;
     margin-left: auto;
     margin-right: 0;
     width: fit-content;
@@ -319,6 +325,7 @@ button, #zip-submit{
 /* links */
 nav>a{
     padding: 5px 5px 5px 15px;
+    font-size: 1.1rem;
     text-decoration: none;
     height:fit-content;
     color: #f86093;
@@ -476,9 +483,11 @@ input{
         margin-top: 40px;
     }
     button{
-        padding: 20px 25px 20px 25px;
-        font-size: rem;
-        border-radius: 35px;
+        padding: 30px 40px;
+        font-size: 2rem;
+        border-radius: 65px;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
     .step{
         margin: 5% 10% 180% 0;
@@ -489,18 +498,15 @@ input{
     .title{
         font-size: 1rem;
     }
-    h1{
-        font-size: 1rem;
-    }
-    h2, .content>h2{
-        line-height: 170%;
-        font-size: 3.5rem;
+    .title>h1{
+        font-size: 1.3rem;
     }
     #close{
         display: none;
     }
     html{
         font-size: 1.5rem;
+        line-height: 195%;
     }
     .flex{
         flex-direction: column;
@@ -518,7 +524,7 @@ input{
     .content{
         font-size: 1.8rem;
     }
-    .content>p{
+    .content>p, .content>h2{
         font-size: 1.5rem;
     }
     .checks, .radio{

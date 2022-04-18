@@ -79,4 +79,7 @@
         background-size: 56px 50px;
         left: 80%;
     }
+    .topic-text{
+        width: 80%;
+    }
 }

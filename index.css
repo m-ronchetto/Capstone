@@ -28,7 +28,11 @@
   margin-bottom: 30px;
 }
 .transitioner{
-  margin: 10% 0 0 50%;
+  margin: 10% 0 0 45%;
+  font-size: 1.3rem;
+}
+.transitioner:hover{
+  color: #c6cbfe;
 }
 .flex{
   justify-content: space-between;
@@ -39,6 +43,7 @@
 }
 .tip{
   margin: auto;
+  margin-bottom: 30px;
 }
 #about, #how{
   height: 50vh;
@@ -247,4 +252,27 @@
       right: 3vh;
       left: auto;
     }
+  .flex>div{
+    width: 100%;
+  }
+  .flex>img{
+    width: 80%;
+  }
+  .transitioner{
+    margin: 20% 0 0 25%;
+    font-size: 1.8rem;
+  }
+  #big-cta{
+    padding: 30px 40px;
+    font-size: 2.8rem;
+    border-radius: 65px;
+    margin-bottom: 50px;
+  }
+  img{
+    justify-content: center;
+  }
+  #section-wide>img{
+    margin: 50px 0 50px 25%;
+    width: 50%;
+  }
 }

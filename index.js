@@ -81,3 +81,13 @@ function currentStep(step){
     } 
     currentStep(step);
 }));
+
+//tooltips
+Array.from(document.getElementsByClassName("highlighting")).forEach((el, index, fullArray) => el.addEventListener("mouseover", function(event){
+    document.getElementById("tip-"+(index+1)).classList.add("visible");
+}));
+
+Array.from(document.getElementsByClassName("highlighting")).forEach((el, index, fullArray) => el.addEventListener("mouseout", function(event){
+    console.log(document.getElementById('tip-'+(index+1)).classList);
+    document.getElementById("tip-"+(index+1)).classList.remove("visible");
+}));
