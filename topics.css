@@ -80,6 +80,16 @@
         left: 80%;
     }
     .topic-text{
-        width: 80%;
+        width: 65%;
+        font-size: 1.5rem;
+        line-height: 165%;
+        margin: 50px 0;
+    }
+    #fixed-header{
+        padding: 25px 5% 25px 5%;
+        font-size: 1.7rem;
+    }
+    .topic-anchor{
+        top: -10vh;
     }
 }

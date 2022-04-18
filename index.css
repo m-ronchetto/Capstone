@@ -237,21 +237,23 @@
     }
   }
 
-  @media screen and (max-width: 992px) {
-    .arrow {
-        width: 60px;
-        height: 60px;
-        background-size: 56px 50px;
-    }
-    .carousel-control.left{
-      left: 3vh;
-      right: auto;
-    }
-    
-    .carousel-control.right {
-      right: 3vh;
-      left: auto;
-    }
+@media screen and (max-width: 992px) {
+  .carousel-control>.arrow {
+      width: 60px;
+      height: 60px;
+      background-size: 56px 50px;
+  }
+  .carousel-control.left{
+    left: 3vh;
+    right: auto;
+  }  
+  .carousel-control.right {
+    right: 3vh;
+    left: auto;
+  }
+  .carousel-control{
+    top: 30vh;
+  }
   .flex>div{
     width: 100%;
   }
@@ -278,13 +280,13 @@
   .short-anchor{
     display: block;
     position: relative;
-    top: 10vh;
+    top: -5vh;
     visibility: hidden;
   }
   .index-anchor{
     display: block;
     position: relative;
-    top: -10vh;
+    top: -23vh;
     visibility: hidden;
   }
 }
