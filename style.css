@@ -482,7 +482,11 @@ input{
     .button-cont, #button-cont-5{
         margin-top: 40px;
     }
-    button{
+    #horizontal{
+        flex-direction: column;
+    }
+    button, #zip-submit{
+        width: fit-content;
         padding: 30px 40px;
         font-size: 2rem;
         border-radius: 65px;
@@ -524,14 +528,24 @@ input{
     .content{
         font-size: 1.8rem;
     }
-    .content>p, .content>h2{
+    .content>p{
         font-size: 1.5rem;
+    }
+    .content>h2{
+        font-size: 2rem;
     }
     .checks, .radio{
         font-size: 1.5rem;
     }
-    input{
-        font-size: 16px;
+    input[type="text"]{
+        font-size: 1.8rem;
+        width: 50%;
+        margin-top: 30px;
+    }
+    textarea{
+        font-size: 1.8rem;
+        margin-top: 30px;
+        height: 50%;
     }
   }
   
