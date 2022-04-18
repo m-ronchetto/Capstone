@@ -501,7 +501,7 @@ input{
         margin: 5% 10% 180% 0;
     }
     .anchor{
-        top: -10vh;
+        top: -12vh;
     }
     .title{
         font-size: 1rem;
@@ -523,6 +523,9 @@ input{
         width: 95%;
         margin: 0;
     }
+    .tip{
+        font-size: 1rem;
+    }
     .flex>img{
         height: 400px;
     }
@@ -541,7 +544,7 @@ input{
         font-size: 2.3rem;
     }
     .checks, .radio{
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
     input[type="text"]{
         font-size: 1.8rem;
@@ -555,6 +558,9 @@ input{
     }
     #step-5-div{
         margin: 50px 10% 25vh 0;
+    }
+    #select-representatives{
+        top: -8vh;
     }
   }
   
