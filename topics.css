@@ -77,8 +77,9 @@
         width: 60px;
         height: 60px;
         background-size: 56px 50px;
-        left: 80%;
+        left: 0;
         opacity: 1;
+        position: relative;
     }
     .topic-text{
         width: 65%;
