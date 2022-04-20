@@ -260,4 +260,7 @@ nav>a:hover{
     .flex>img{
         height: 400px;
     }
+    .next, .next-inactive, #zip-submit{
+        padding: 9px 14px 9px 14px;
+    }
   }
