@@ -94,4 +94,7 @@
     .topic-anchor{
         top: -10vh;
     }
+    #mold-choose{
+        background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)), url('images/mold-mobile.jpg');
+    }
 }

@@ -58,6 +58,9 @@ body{
 ul{
     padding-left: 20px;
 }
+ul>li{
+    line-height: 140%;
+}
 /* Hide scrollbar for Chrome, Safari and Opera */
 body::-webkit-scrollbar {
     display: none;
@@ -460,6 +463,14 @@ input{
 
 /* mobile compatibility */
 @media screen and (max-width: 992px) {
+    ul>li{
+        font-size: 1.7rem;
+        padding-bottom: 10px;
+        line-height: 140%;
+    }
+    ul{
+        padding-left: 40px;
+    }
     #container{
         flex-direction: column;
     }
@@ -548,6 +559,7 @@ input{
     }
     .checks, .radio{
         font-size: 1.6rem;
+        transition: all .15s ease-in;
     }
     input[type="text"]{
         font-size: 1.8rem;
