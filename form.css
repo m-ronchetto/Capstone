@@ -1,0 +1,363 @@
+/* form inputs */
+label{
+    margin: 5px 16px 0px 5px;
+}
+input{
+    font-size: 1.1rem;
+}
+.checks>label,.radio>label, input[type="checkbox"], input[type="radio"]{
+    cursor: pointer;
+}
+.checks, .radio{
+    background-color: #ebebeb;
+    border: 1px black solid;
+    padding: 10px 20px 10px 10px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    width: 100%;
+    transition: all .3s ease-in;
+    cursor: pointer;
+}
+.radio:hover, .checks:hover{
+    padding-left: 30px;
+    padding-right: 0;
+}
+.clicked{
+    border: 1px #bb0642 solid;
+    background-color: #ffcbdc;
+    color: #bb0642;
+}
+form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width:80%;
+}
+#form-5{
+    margin-bottom: 0;
+}
+#error{
+    background-color: #fb9ebd;
+    color: #bb0642;
+    border: 1px #bb0642 solid;
+    opacity: 1;
+}
+#tip-5{
+    margin-top: 15px;
+    font-size: .8rem;
+}
+#representative-form{
+    margin-top: 14%;
+}
+#select-representatives{
+    display: block;
+    position: relative;
+    top: -50px;
+    visibility: hidden;
+}
+#horizontal{
+    flex-direction: row;
+}
+#horizontal>label{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+
+
+/* left column structure */
+#step-5-div{
+    margin: 50px 10% 120px 0;
+}
+.step{
+    margin: 50px 10% 100% 0;
+}
+#progress-bar{
+    background-color: #c6cbfe;
+    height: 3%;
+    width: 100%;
+}
+#percent-done{
+    height: 100%;
+    width: 0%;
+    background-color: #5a01ba;
+    transition: width .5s;
+    z-index: 1;
+}
+#container{
+    display: flex;
+    margin: 0 6% 0 6%;
+}
+#left-column{
+    width: 50%;
+    transition: width 1s;
+}
+.content{
+    padding: 0px 25px 25px 25px;
+    font-size: 1.1rem;
+}
+.content>p{
+    font-size: .9rem;
+    padding: 10px 0 10px 0;
+    width: 85%;
+}
+.content>h2{
+    font-size: 1.8rem;
+}
+.button-cont{
+    margin-top: 20px;
+    width: fit-content;
+}
+#button-cont-5{
+    margin-top: 0px;
+    width: fit-content;
+}
+#preview-letter, .story{
+    width: 90%;
+    padding: 25px 35px 35px 35px;
+    margin: 3% 2% 3% 2%;
+    background-color: white;
+    border-radius: 20px;
+    height: fit-content;
+    word-wrap:break-word;
+}
+
+
+
+
+/* buttons */
+#zip-submit{
+    margin-left: 20px;
+}
+#close{
+    background-color: #5e5e5e;
+    background: linear-gradient(to left, #5e5e5e 50%, #c4c4c4 50%) right;
+    background-size: 300% 100%;
+    transition: .5s ease-out;
+    color: white;
+    border: none;
+    position: fixed;
+    z-index: 1;
+    top: 19%;
+    right: 10%;
+}
+#close:hover{
+    background-position: left;
+    border: 1px #5e5e5e solid;
+    color: #5e5e5e;
+    padding: 9px 14px 9px 14px;
+}
+.back{
+    background-color: #5e5e5e;
+    background: linear-gradient(to left, #5e5e5e 50%, #e5e5e5 50%) right;
+    background-size: 300% 100%;
+    transition: .5s ease-out;
+    margin-right: 10px;
+    color: white;
+    border: none;
+}
+.back:hover{
+    background-position: left;
+}
+.back:hover>a,.back-inactive{
+    color: #5e5e5e;
+}
+.back:hover,.back-inactive{
+    background-color: #e5e5e5;
+    color: black;
+    margin-right: 10px;
+    border: 1px #5e5e5e solid;
+    padding: 9px 14px 9px 14px;
+}
+
+
+
+
+/* right column styling */
+#dynamic-letter-story, .dynamic-letter-name{
+    width: fit-content;
+}
+#right-column{
+    min-width: 30%;
+    padding: 45px 55px 35px 55px;
+    margin-bottom: 50px;
+    position: fixed;
+    top: 16%;
+    background-color: white;
+    border-radius: 2px;
+    filter: drop-shadow(2px 2px 5px rgb(159, 159, 159));
+    overflow-y: auto;
+    max-height: 70%;
+    height: fit-content;
+    word-wrap:break-word;
+    transition: right 1s, width 1s, max-width 1s;
+}
+#intro{
+    padding-bottom: 20px;
+    font-size: 1.2rem;
+}
+#end{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#dynamic-letter>p>a:visited, #dynamic-letter>p>a,#dynamic-letter>a, #calls-to-action>a{
+    text-decoration: none;
+}
+.unselected{
+    color: #5a01ba;
+}
+.unselected:hover{
+    color: #c6cbfe;
+}
+.selected{
+    color: #bb0642;
+    transition: font-size 1s;
+    cursor: pointer;
+}
+.selected:hover{
+    color: #fdb2cb;
+}
+
+
+
+/* preview toggle */
+.hide{
+    max-width: 30%;
+    right: -40%;
+}
+.show{
+    right: 8%;
+    max-width: 30%;
+}
+.hide-left{
+    width: 10% !important;
+    visibility: hidden;
+}
+#left-column.wide{
+    width: 100%;
+    transition: width 1s;
+}
+.full-preview{
+    width: 80%;
+    max-width: 80%;
+    right: 8%;
+}
+#submit-button{
+    display: none;
+}
+
+
+
+
+/* submit section gradient background*/
+.css-selector {
+    padding: 5% 0 5% 0;
+    background: linear-gradient(34deg, #5a01ba, #f86093, #fdb2cb, #c6cbfe);
+    background-size: 800% 800%;
+
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+
+
+
+/* mobile compatibility */
+@media screen and (max-width: 992px) {
+    ul>li{
+        font-size: 1.7rem;
+        padding-bottom: 10px;
+        line-height: 140%;
+    }
+    ul{
+        padding-left: 40px;
+    }
+    #container{
+        flex-direction: column;
+    }
+    #right-column {
+      min-width: 95%;
+      width: 100%;
+      position: relative;
+      margin-top: 2%;
+    }
+    .show{
+        width: 100%;
+    }
+    form{
+        width: 100%;
+    }
+    #left-column{
+        width: 100%;
+        justify-content: center;
+    }
+    .button-cont, #button-cont-5{
+        margin-top: 40px;
+    }
+    #horizontal{
+        flex-direction: column;
+    }
+    input[type="checkbox"], input[type="radio"]{
+        width: 45px;
+        height: 45px;
+    }
+    .step{
+        margin: 5% 10% 180% 0;
+    }
+    #close{
+        display: none;
+    }
+    .story{
+        margin-top: 40px;
+    }
+    .content{
+        font-size: 1.8rem;
+    }
+    #name-input{
+        margin-top: 30px;
+    }
+    .content>p{
+        font-size: 1.4rem;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .content>h2{
+        font-size: 2.3rem;
+    }
+    .checks, .radio{
+        font-size: 1.6rem;
+        transition: all .15s ease-in;
+    }
+    input[type="text"]{
+        font-size: 1.8rem;
+        width: 50%;
+    }
+    textarea{
+        font-size: 1.8rem;
+        margin-top: 30px;
+        height: 50%;
+    }
+    #step-5-div{
+        margin: 50px 10% 25vh 0;
+    }
+    #select-representatives{
+        top: -8vh;
+    }
+}

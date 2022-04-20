@@ -1,27 +1,28 @@
 //dynamic text inputs
 document.getElementById("name-input").addEventListener("input", function(){
-    let name = document.getElementById("dynamic-letter-name");
-    let active = document.getElementsByClassName("active-text");
-    name.classList.add("selected");
-    name.classList.remove("unselected");
+    let name = document.getElementsByClassName("dynamic-letter-name");
     text = document.getElementById("name-input").value;
-    Array.from(active).forEach((el) => el.classList.remove("active-text"));
-    name.classList.add("active-text");
+
+    Array.from(name).forEach(function(element) {
+        element.classList.add("selected");
+        element.classList.remove("unselected");
+        element.innerText = text;
+
+    });
     if (text.length === 0){
         text = "(name)";
-        name.classList.add("unselected");
-        name.classList.remove("selected");
+        Array.from(name).forEach(function(element) {
+            element.classList.add("unselected");
+            element.classList.remove("selected");
+            element.innerText = text;
+        });
     }
-    name.innerText = text;
 });
 document.getElementById("story-input").addEventListener("input", function(){
     let story = document.getElementById("dynamic-letter-story");
-    let active = document.getElementsByClassName("active-text");
     story.classList.add("selected");
     story.classList.remove("unselected");
     text = document.getElementById("story-input").value;
-    Array.from(active).forEach((el) => el.classList.remove("active-text"));
-    story.classList.add("active-text");
     if (text.length === 0){
         text = "(Share your story)";
         story.classList.add("unselected");
@@ -29,6 +30,31 @@ document.getElementById("story-input").addEventListener("input", function(){
     }
     story.innerText = text;
 });
+document.getElementById("custom-cta").addEventListener("click", function(event){
+    event.preventDefault();
+    event.stopPropagation();
+});
+document.getElementById("custom-cta").addEventListener("input", function(){
+    let name = document.getElementById("action-4-li");
+    name.classList.add("selected");
+    name.classList.remove("unselected");
+    text = document.getElementById("custom-cta").value;
+    if (text.length === 0){
+        name.classList.add("unselected");
+        name.classList.remove("selected");
+    }
+    name.innerText = text;
+});
+
+//radio actions
+document.getElementById("radio-button").addEventListener("click", function(){
+    //find which radio is active
+    //if none are active, tip asking to choose an option
+    //if option 1 is active, send to step 4 and use current text and show "share your story" on preview
+    //if option 2 is active, send to step 4 and use option 2 text and show "share your story" on preview
+    //if option 3 is active, send to step 5 and hide "share your story" on preview
+})
+
 
 //dynamnic checkbox inputs
 function updateAction(el, divId){
@@ -94,6 +120,11 @@ function checksClickFunction(event, el){
 
 Array.from(document.getElementsByClassName("check")).forEach((el, index) => el.addEventListener("click", function(event){
     checkClickFunction(event, el);
+    if(document.getElementById("action-4").parentElement.classList.contains("clicked")){
+        document.getElementById("custom-cta").classList.remove("hidden");
+    }else{
+        document.getElementById("custom-cta").classList.add("hidden");
+    }
     updateAction(el, "action-"+(index+1)+"-li");
 }));
 Array.from(document.getElementsByClassName("checks")).forEach((el) => el.addEventListener("click", function(event){
@@ -111,12 +142,12 @@ function currentStep(step){
     progress.style.width = (20*step + "%");
     Array.from(document.getElementsByClassName("current-step")).forEach((el) => el.classList.remove("current-step"));
         document.getElementById("step-"+step+"-header").classList.add("current-step");
-    Array.from(document.getElementsByClassName("step-subtitle")).forEach(function(el){
-        el.classList.remove("step-subtitle");
-        el.classList.add("step-subtitle-hidden");
-    });
-    document.getElementById("step-" + step + "-subtitle").classList.remove("step-subtitle-hidden");
-    document.getElementById("step-" + step + "-subtitle").classList.add("step-subtitle");
+    // Array.from(document.getElementsByClassName("step-subtitle")).forEach(function(el){
+    //     el.classList.remove("step-subtitle");
+    //     el.classList.add("step-subtitle-hidden");
+    // });
+    // document.getElementById("step-" + step + "-subtitle").classList.remove("step-subtitle-hidden");
+    // document.getElementById("step-" + step + "-subtitle").classList.add("step-subtitle");
 }
 
 ["DOMContentLoaded", "scroll"].forEach((event) => document.addEventListener(event, function(){
