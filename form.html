@@ -117,13 +117,13 @@
                             <div class="radio">
                                 <input name="topic" id="action-1" type="radio">
                                 <label for="action-1">
-                                    Why is this topic important to you?
+                                    Why is <span class="topic">this topic</span> important to you?
                                 </label>
                             </div>
                             <div class="radio">
                                 <input name="topic" id="action-2" type="radio">
-                                <label class="radios" for="action-2">
-                                How has air pollution affected your life?
+                                <label for="action-2">
+                                How has <span class="topic">this topic</span> affected your life?
                             </label>
                             </div>
                             <div class="radio">
@@ -139,16 +139,18 @@
                                 Back
                                 </button>
                             </a>
-                            <button id="radio-button" class="next" type="button">
-                                Next: Share Your Story
-                            </button>
+                            <a href="#step-4">
+                                <button id="radio-button" class="next" type="button">
+                                    Next: Share Your Story
+                                </button>
+                            </a>
                         </div>
                     </div> 
                 </div>
                 <a class="anchor" id="step-4"></a>
                 <div class="step" id="step-4-div">
                     <div class="content">
-                        <h2>4. <span class="highlighting">Share a story</span> of how this topic is important to you.</h2>
+                        <h2>4. <span class="highlighting">Share a story</span> of how <span class="topic">this topic</span> <span id="step-4-prompt">is important to you</span>.</h2>
                         <div class="tip" id="tip-4">
                             <p>
                                 You’re nearly done! This step will make your letter shine.
@@ -157,15 +159,26 @@
                         <p>
                             Here are some ideas to get you started:
                         </p>
-                        <ul>
+                        <ul class="step-4-ul">
                             <li>
-                                How did you first learn about this topic?
+                                How did you first learn about <span class="topic">this topic</span>?
                             </li>
                             <li>
-                                Have you volunteered doing work related to this topic?
+                                Have you volunteered doing work related to <span class="topic">this topic</span>?
                             </li>
                             <li>
-                                How does this topic affect others?
+                                How does <span class="topic">this topic</span> affect others?
+                            </li>
+                        </ul>
+                        <ul class="step-4-ul hidden">
+                            <li>
+                                When did <span class="topic">this topic</span> begin to affect you or someone close to you?
+                            </li>
+                            <li>
+                                How has <span class="topic">this topic</span> affected other areas of your life (health, finances, well-being)?
+                            </li>
+                            <li>
+                                What do you wish others knew about <span class="topic">this topic</span>?
                             </li>
                         </ul>
                         <form>
@@ -232,7 +245,7 @@
                 <div id="dynamic-letter">
                     <p id="intro">Hello <a id="dynamic-letter-rep" class="unselected" href="#step-1">(representative)</a>,</p>
                     <p> My name is <a class="dynamic-letter-name unselected" href="#step-2">(name)</a>, and I am a constituent from <a id="dynamic-letter-county" class="unselected" href="#step-1">(location)</a> county.</p>
-                    <p>
+                    <p id="topic-paragraph">
                         <span class="selected">Air pollution</span> contributes to premature death, heart attacks, aggravated
                         asthma, and reduced lung function. St. Louis has been in violation of the
                         federal health-based air standard for ozone

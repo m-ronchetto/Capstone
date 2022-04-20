@@ -17,3 +17,9 @@ function currentStep(step){
     } 
     currentStep(step);
 }));
+
+Array.from(document.getElementsByClassName("next")).forEach((el) => el.addEventListener('click', function(event){
+    event.preventDefault();
+    sessionStorage.setItem("topic", el.getAttribute("topic"));
+    location.href = location.href.replace('topics.html', 'form.html')
+}));

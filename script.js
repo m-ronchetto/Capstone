@@ -47,12 +47,40 @@ document.getElementById("custom-cta").addEventListener("input", function(){
 });
 
 //radio actions
-document.getElementById("radio-button").addEventListener("click", function(){
+document.getElementById("radio-button").addEventListener("click", function(event){
     //find which radio is active
     //if none are active, tip asking to choose an option
     //if option 1 is active, send to step 4 and use current text and show "share your story" on preview
     //if option 2 is active, send to step 4 and use option 2 text and show "share your story" on preview
     //if option 3 is active, send to step 5 and hide "share your story" on preview
+
+
+    // determine which radio button is checked
+    let checked = -1;
+    let divs = document.getElementsByClassName('radio');
+    Array.from(divs).forEach(function(element,index){
+        if (element.classList.contains('clicked')){
+            checked = index;
+        }
+    });
+    // if nothing selected, do nothing
+    if (checked == -1){
+        event.preventDefault();
+    // if one of the first two options is selected, go to step 4 (update <a> parent to go to step 4, allow event to propagate to parent)
+    } else if (checked == 0) {
+        document.getElementById("radio-button").parentElement.setAttribute("href", "#step-4");
+        document.getElementsByClassName("step-4-ul")[0].classList.remove("hidden");
+        document.getElementsByClassName("step-4-ul")[1].classList.add("hidden");
+        document.getElementById("step-4-prompt").innerText = "is important to you";
+    // if "skip" option selected, update parent to go to step 5 instead of step 4
+    } else if (checked == 1) {
+        document.getElementsByClassName("step-4-ul")[1].classList.remove("hidden");
+        document.getElementsByClassName("step-4-ul")[0].classList.add("hidden");
+        document.getElementById("step-4-prompt").innerText = "has impacted your life";
+    } else {
+        document.getElementById("radio-button").parentElement.setAttribute("href", "#step-5");
+    }
+
 })
 
 
@@ -379,3 +407,19 @@ window.show = function(increase) {
   index = Math.min(Math.max(index,0), liEls.length-1);
   liEls[index].scrollIntoView({behavior: 'smooth'});
 }
+
+if (sessionStorage.getItem('topic') == null){
+    sessionStorage.setItem('topic', 'air pollution');
+}
+const topic_string = sessionStorage.getItem('topic');
+
+Array.from(document.getElementsByClassName("topic")).forEach((element) => element.innerText = topic_string);
+
+const topic_paragraphs = {
+    'air pollution': '<span class="selected">Air pollution</span> contributes to premature death, heart attacks, aggravated asthma, and reduced lung function. St. Louis has been in violation of the federal health-based air standard for ozone since 1979.',
+    'safe water': 'safe water paragraph',
+    'mold': 'this mf moldy',
+    'food access': 'yum'
+};
+
+document.getElementById("topic-paragraph").innerHTML = topic_paragraphs[topic_string];

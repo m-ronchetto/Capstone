@@ -91,3 +91,10 @@ Array.from(document.getElementsByClassName("highlighting")).forEach((el, index, 
     console.log(document.getElementById('tip-'+(index+1)).classList);
     document.getElementById("tip-"+(index+1)).classList.remove("visible");
 }));
+
+
+Array.from(document.getElementsByClassName("topic-link")).forEach((el) => el.addEventListener('click', function(event){
+    event.preventDefault();
+    sessionStorage.setItem("topic", el.getAttribute("topic"));
+    location.href = location.href.replace('index.html', 'form.html')
+}));
