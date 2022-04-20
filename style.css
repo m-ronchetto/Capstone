@@ -234,6 +234,12 @@ nav>a:hover{
         margin-top: 50px;
         margin-bottom: 50px;
     }
+    .next:hover,.next-inactive, #zip-submit:hover{
+        background-color: #c6cbfe;
+        color: #5a01ba;
+        border: 1px #5a01ba solid;
+        padding: 26px 36px;
+    }
     .anchor{
         top: -12vh;
     }
