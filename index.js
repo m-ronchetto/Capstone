@@ -96,5 +96,6 @@ Array.from(document.getElementsByClassName("highlighting")).forEach((el, index, 
 Array.from(document.getElementsByClassName("topic-link")).forEach((el) => el.addEventListener('click', function(event){
     event.preventDefault();
     sessionStorage.setItem("topic", el.getAttribute("topic"));
-    location.href = location.href.replace('index.html', 'form.html')
+    // location.href = location.href.replace('index.html', 'form.html')
+	location.href= "https://m-ronchetto.github.io/Capstone/form.html";
 }));
