@@ -416,10 +416,10 @@ const topic_string = sessionStorage.getItem('topic');
 Array.from(document.getElementsByClassName("topic")).forEach((element) => element.innerText = topic_string);
 
 const topic_paragraphs = {
-    'air pollution': '<span class="selected">Air pollution</span> contributes to premature death, heart attacks, aggravated asthma, and reduced lung function. St. Louis has been in violation of the federal health-based air standard for ozone since 1979.',
-    'safe water': 'safe water paragraph',
-    'mold': 'this mf moldy',
-    'food access': 'yum'
+    'air pollution': '<a class="selected" href="#step-1">Air pollution</a> contributes to premature death, heart attacks, aggravated asthma, and reduced lung function. St. Louis has been in violation of the federal health-based air standard for ozone since 1979.',
+    'safe water': 'There is no safe level of exposure to lead in our <a class="selected" href="#step-1">drinking water.</a> Lead poisoning has been occurring much longer and the rates continue to be higher in the northern section of the city and southern along highway 55.',
+    'mold': '<a class="selected" href="#step-1">Mold</a> is expensive to remove, there are no legal standards for mold exposure, and landlords often refuse to do anything about it. Addressing mold is out of reach for many who are most affected by it.',
+    'food access': '<a class="selected" href="#step-1">Access to healthy food</a> is associated with lower risk for obesity and other diet-related chronic diseases. Access to a car allows people to leave the food desert and shop at supermarkets and large grocery stores outside of their neighborhoods.'
 };
 
 document.getElementById("topic-paragraph").innerHTML = topic_paragraphs[topic_string];
