@@ -248,13 +248,87 @@ document.getElementById("preview-button").addEventListener("click", function(){
     }
 });
 
-document.getElementById("submit-button").addEventListener("click", function(){
-    document.getElementById("close").style.display = "none";
-    const right = document.getElementById("right-column");
-    let submit = document.getElementById("submit-button");
-    right.classList.add("hide");
-    submit.style.display = "none";
-    right.classList.remove("full-preview");
+function validateForm(){
+    let reps = document.querySelectorAll("#representative-form>.checks.clicked");
+    if (reps.length == 0){
+        return [false, "Error: Must select at least one representative."];
+    }
+    let name = document.getElementById("name-input").value;
+    if (name.trim().length == 0){
+        return [false, "Error: Must enter your name."];
+    }
+    let calls = document.querySelectorAll("#form-5>.checks.clicked");
+    if (calls.length == 0){
+        return [false, "Error: must choose at least one call to action."];
+    }
+    if (calls.length == 1 && calls[0].lastChild.tagName.toUpperCase() == "INPUT" && calls[0].lastChild.value.trim().length == 0){
+        return [false, "Error: custom call to action cannot be empty."];
+    }
+        
+    return [true, ""];
+}
+
+function submitForm(){
+    // validate form
+    let [valid, msg] = validateForm();
+    if (!valid){
+        alert(msg);
+        return false;
+    }
+    let mailto = 'mailto:?';
+    // construct address list
+    let email_list = selectedRepresentatives.map((el) => emails[el]).join(",");
+    mailto += "bcc=" + encodeURIComponent(email_list);
+    // add subject line
+    mailto += "&subject=" + encodeURIComponent("Addressing " + sessionStorage.getItem("topic") + " in St. Louis");
+    // construct message body
+    let body = document.getElementById("intro").innerText;
+    body += "\n\n" + document.getElementById("location").innerText;
+    body += "\n\n" + document.getElementById("topic-paragraph").innerText;
+    let shared_story = document.getElementById("story-input").value;
+    if (shared_story.trim().length > 0){
+        body += "\n\n" + shared_story.trim();
+    }
+    let calls_to_action = document.querySelectorAll("#form-5>.checks.clicked");
+    if (calls_to_action.length == 1){
+        body += "\n\nThis is how I would like you to commit to taking action:";
+    }else{
+        body += "\n\nThese are the steps I would like you to commit to to take action:"
+    }
+    let calls_text = Array.from(calls_to_action).map(function(el){
+        if (el.lastChild.tagName.toUpperCase() == "LABEL"){
+            return el.lastChild.textContent.trim();
+        }else{
+            return el.lastChild.value.trim();
+        }
+    });
+    console.log(calls_text);
+    let calls_filtered = calls_text.filter((el) => el.length > 0);
+    let calls_joined = calls_filtered.join("\n - ")
+    body += "\n - " + calls_joined;
+    body += "\n\nSincerely,";
+    body += "\n" + document.getElementById("name-input").value.trim();
+
+    mailto += "&body=" + encodeURIComponent(body);
+    const form = document.getElementById("submission");
+    form.setAttribute("action", mailto);
+    form.submit();
+
+    return true;
+}
+
+document.getElementById("submit-button").addEventListener("click", function(event){
+    if (submitForm()){
+        document.getElementById("close").style.display = "none";
+        document.getElementById("submit").classList.remove("hidden");
+        const right = document.getElementById("right-column");
+        let submit = document.getElementById("submit-button");
+        right.classList.add("hide");
+        submit.style.display = "none";
+        right.classList.remove("full-preview");
+    }else{
+        event.preventDefault();
+    }
 });
 
 //zipcode matching user to representative:
@@ -393,11 +467,6 @@ Array.from(document.getElementsByClassName("highlighting")).forEach((el, index, 
     console.log(document.getElementById('tip-'+(index+1)).classList);
     document.getElementById("tip-"+(index+1)).classList.remove("visible");
 }));
-
-//displaying submit page
-document.getElementById("submit-button").addEventListener("click", function(){
-    document.getElementById("submit").classList.remove("hidden");
-});
 
 //carousel?
 let liEls = document.querySelectorAll('ul li');
