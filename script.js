@@ -302,7 +302,6 @@ function submitForm(){
             return el.lastChild.value.trim();
         }
     });
-    console.log(calls_text);
     let calls_filtered = calls_text.filter((el) => el.length > 0);
     let calls_joined = calls_filtered.join("\n - ")
     body += "\n - " + calls_joined;
@@ -311,8 +310,8 @@ function submitForm(){
 
     mailto += "&body=" + encodeURIComponent(body);
     const form = document.getElementById("submission");
-    form.setAttribute("action", mailto);
-    form.submit();
+    form.setAttribute("href", mailto);
+    form.click();
 
     return true;
 }
@@ -490,5 +489,17 @@ const topic_paragraphs = {
     'mold': '<a class="selected" href="#step-1">Mold</a> is expensive to remove, there are no legal standards for mold exposure, and landlords often refuse to do anything about it. Addressing mold is out of reach for many who are most affected by it.',
     'food access': '<a class="selected" href="#step-1">Access to healthy food</a> is associated with lower risk for obesity and other diet-related chronic diseases. Access to a car allows people to leave the food desert and shop at supermarkets and large grocery stores outside of their neighborhoods.'
 };
-
 document.getElementById("topic-paragraph").innerHTML = topic_paragraphs[topic_string];
+
+const calls_to_action = {
+    'air pollution': ["Call on the EPA to enforce the Regional Haze Rule in St. Louis.", "Oppose H.B.2322, which ends vehicle emissions testing program for Franklin, Jefferson and St. Charles Counties.", "Oppose S.B.1086, which prohibits political subdivisions from enacting ordinances more restrictive than the federal Clean Air Act."],
+    'safe water': ["Support H.B. 2532, which helps schools treat lead contamination from water sources.", "Support H.B. 1930, which prohibits drilling or creating wells near superfund sites.", "Support H.B. 2059, which gives public representation on the Clean Water Commission."],
+    'mold': ["Support U.S. S2300, which creates a federal grant to improve housing conditions.", "Oppose H.B. 2206, which reduces the statute of limitations for injury claims due to asbestos exposure.", "Support H.B. 1737, which expands the protected classes for housing discrimination."],
+    'food access': ["Support H.B. 1919, which gives a tax credit to urban farms located in a food desert.", "Support H.B. 1992, which removes sales tax on food.", "Support H.B. 2871, which creates a tax credit for grocery stores located in a food desert."]
+};
+console.log(topic_string);
+Array.from([1,2,3]).forEach((i) => {
+    document.querySelector('label[for="action-' + i + '"]').innerText = calls_to_action[topic_string][i-1];
+    console.log(document.querySelector('label[for="action-' + i + '"]'));
+    document.querySelector("#action-" + i + "-li>li").innerText = calls_to_action[topic_string][i-1];
+});
